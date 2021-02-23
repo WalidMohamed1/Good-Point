@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="something is found here.\nif it maybe yours, communicate with who found it"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_12ssp"
+        android:background="@color/orange"
+        android:layout_margin="@dimen/_5sdp"
+        android:padding="@dimen/_5sdp"/>
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:layout_margin="@dimen/_5sdp"
+        android:padding="@dimen/_15sdp" android:background="@drawable/details_background"
+        android:gravity="center">
+        <LinearLayout
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/black"
+                android:text="Name"/>
+
+            <TextView
+                android:id="@+id/name_of_founder"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_15ssp"
+                android:text="Ahmed"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_5sdp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="#6FFF5722"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:weightSum="2">
+            <TextView
+                android:id="@+id/mail_of_founder"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/black"
+                android:text="E-mail"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_15ssp"
+                android:text="ahmed22@gmail.com"
+                android:gravity="end"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/_5sdp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="#6FFF5722"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_15ssp"
+                android:textColor="@color/black"
+                android:text="@string/PhoneNumber"/>
+            <TextView
+                android:id="@+id/phone_of_founder"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="@dimen/_15ssp"
+                android:text="01234567890"
+                android:gravity="end"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:id="@+id/call_button"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:text="Call"
+            android:textColor="@color/white"
+            android:background="@drawable/details_btns"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/_15sdp"/>
+        <Button
+            android:id="@+id/mail_button"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:text="Send mail"
+            android:textColor="@color/white"
+            android:background="@drawable/details_btns"
+            android:textAllCaps="false"
+            android:layout_margin="@dimen/_15sdp"/>
+    </LinearLayout>
+</LinearLayout>

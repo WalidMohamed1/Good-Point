@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_4sdp"
+    android:id="@+id/bottom_sheet"
+    android:background="@drawable/bottom_sheet_background">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/Add_point"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold"
+            android:paddingLeft="@dimen/_13sdp"
+            android:textColor="#000000"/>
+
+     <ImageView
+         android:id="@+id/hide_sheet"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:paddingRight="@dimen/_13sdp"
+         android:paddingTop="@dimen/_3sdp"
+         android:src="@drawable/ic_close" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_18sdp">
+        <LinearLayout
+            android:id="@+id/ilost"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_17sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/ic_lost" />
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_13sdp"
+                android:text="@string/Lost"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ifound"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/_17sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/ic_found"/>
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/_13sdp"
+                android:text="@string/Found"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+

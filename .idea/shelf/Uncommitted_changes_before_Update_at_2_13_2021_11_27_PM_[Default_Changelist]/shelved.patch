@@ -1,0 +1,10 @@
+Index: backend/.env
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/.env	(date 1613017568849)
++++ backend/.env	(date 1613017568849)
+@@ -0,0 +1,1 @@
++export JWT_SECRET_KEY = '[,]f,dkjSECRET_KEY'
+\ No newline at end of file

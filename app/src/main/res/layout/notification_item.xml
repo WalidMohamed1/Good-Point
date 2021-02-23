@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/_3sdp"
+    android:id="@+id/notification_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/_2sdp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/notification_image"
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="@dimen/_75sdp"/>
+        
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_margin="@dimen/_2sdp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_3sdp">
+
+            <TextView
+                android:id="@+id/notification_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="match item"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/notification_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="10/12/2020"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/notification_description"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/_3sdp"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_10ssp"
+            android:text="your item is found with Ahmed Mostafa, click here to communicate with him"/>
+
+    </LinearLayout>
+</LinearLayout>

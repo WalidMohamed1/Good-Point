@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MatchFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/_20sdp"
+        android:padding="@dimen/_10sdp"
+        android:background="#59CAC6C4"
+        android:orientation="vertical">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:id="@+id/lisView"
+            android:divider="#59CAC6C4"
+            android:dividerHeight="@dimen/_16sdp"/>
+
+    </LinearLayout>
+</FrameLayout>

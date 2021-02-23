@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=E1:38:50:EF:7F:4B:1D:9E:89:10:E7:1C:BA:D2:B6:F8:F5:C6:08:39%3Bcom.helloworld.goodpoint.ui
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.helloworld.goodpoint.ui
+
+    SHA-1 certificate fingerprint:
+    E1:38:50:EF:7F:4B:1D:9E:89:10:E7:1C:BA:D2:B6:F8:F5:C6:08:39
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyDSlxIGBsvMZkpSZTMLnQ8MVKup40YFR6g</string>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_230sdp"
+    android:padding="@dimen/_8sdp"
+    android:background="@drawable/nav_head_color"
+    android:gravity="bottom">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/circuler_profile_img"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_account_circle"
+        android:background="@drawable/white_oval"
+        app:civ_border_width="@dimen/_3sdp"
+        app:civ_border_color="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_20ssp" android:text="Good Point"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:textSize="@dimen/_15ssp" android:text="goodpoint@sci.asu.edu.eg"
+        android:textColor="@android:color/white" />
+</LinearLayout>

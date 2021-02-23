@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item  android:height="@dimen/_100sdp" >
+        <shape android:visible="false"
+            android:shape="rectangle">
+            <solid android:color="#F49C3B"/>
+            <size
+                android:width="5dp"
+                android:height="1dp"/>
+            <corners
+                android:bottomLeftRadius="300dp"
+                android:bottomRightRadius="300dp"/>
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <solid android:color="#17FFFFFF" />
+        </shape>
+    </item>
+    <item android:top="@dimen/_1sdp" android:left="@dimen/_40sdp"
+        android:right="@dimen/_5sdp" android:width="@dimen/_60sdp"
+        android:height="@dimen/_90sdp"
+        android:drawable="@drawable/location_signin"
+        >
+    </item>
+    <item android:top="@dimen/_450sdp" android:left="@dimen/_200sdp" >
+        <shape android:shape="rectangle">
+            <solid android:color="#F49C3B" />
+            <size
+                android:width="9dp"
+                android:height="1dp"/>
+            <corners
+                android:topLeftRadius="@dimen/_200sdp"/>
+        </shape>
+    </item>
+</layer-list>
+<!--
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white"/>
+            <shape
+                android:shape="rectangle">
+                <solid android:color="#F49C3B"/>
+                <size
+                    android:width="5dp"
+                    android:height="1dp"/>
+                <corners
+                    android:bottomLeftRadius="300dp"
+                    android:bottomRightRadius="300dp"/>
+            </shape>
+        </shape>
+    </item>
+
+</selector>-->

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_15sdp"
+    tools:context=".ui.HomeFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_15ssp"
+        android:textColor="#2E2E2E"
+        android:text="@string/Hi_message"
+        android:layout_marginBottom="@dimen/_4ssp"/>
+    <TextView
+        android:id="@+id/daily_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_18ssp"
+        android:textColor="#2E2E2E"
+        android:text=""
+        android:layout_marginBottom="@dimen/_8sdp"/>
+
+
+    <ExpandableListView
+        android:id="@+id/expanded_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ExpandableListView>
+
+</LinearLayout>

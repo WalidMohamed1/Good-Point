@@ -1,0 +1,333 @@
+Index: app/src/main/res/layout/fragment_map.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:orientation=\"vertical\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\" >\r\n    <TextView android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Guess where you might have lost your item\"\r\n        android:gravity=\"center\"\r\n        android:textColor=\"@android:color/black\"\r\n        android:background=\"@color/orange\"\r\n        android:padding=\"@dimen/_5sdp\"/>\r\n    <fragment\r\n        android:id=\"@+id/map\"\r\n        android:name=\"com.google.android.gms.maps.SupportMapFragment\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        tools:context=\".ui.MapFragment\" />\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_map.xml	(revision 3e22dcd6b778afe345cadabb6b37a7c8570e04b2)
++++ app/src/main/res/layout/fragment_map.xml	(date 1612908223880)
+@@ -16,5 +16,5 @@
+         android:name="com.google.android.gms.maps.SupportMapFragment"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+-        tools:context=".ui.MapFragment" />
++        tools:context=".ui.FoundMapFragment" />
+ </LinearLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/helloworld/goodpoint/ui/HomeActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.helloworld.goodpoint.ui;\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.ActionBarDrawerToggle;\r\nimport androidx.appcompat.app.AlertDialog;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.appcompat.widget.Toolbar;\r\nimport androidx.core.view.GravityCompat;\r\nimport androidx.drawerlayout.widget.DrawerLayout;\r\nimport androidx.fragment.app.Fragment;\r\nimport android.content.DialogInterface;\r\nimport android.content.Intent;\r\nimport android.graphics.Color;\r\nimport android.graphics.PorterDuff;\r\nimport android.os.Bundle;\r\nimport android.view.LayoutInflater;\r\nimport android.view.Menu;\r\nimport android.view.MenuItem;\r\nimport android.view.View;\r\nimport android.widget.LinearLayout;\r\nimport com.google.android.material.bottomnavigation.BottomNavigationView;\r\nimport com.google.android.material.bottomsheet.BottomSheetDialog;\r\nimport com.google.android.material.floatingactionbutton.FloatingActionButton;\r\nimport com.google.android.material.navigation.NavigationView;\r\nimport com.helloworld.goodpoint.R;\r\nimport com.helloworld.goodpoint.ui.lostFoundObject.FoundObjectActivity;\r\nimport com.helloworld.goodpoint.ui.lostFoundObject.LostObjectDetailsActivity;\r\n\r\npublic class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {\r\n    DrawerLayout drawerLayout;\r\n    NavigationView navigationView;\r\n    Toolbar toolbar;\r\n    AlertDialog.Builder dialog;\r\n    BottomNavigationView bottomNavigationView;\r\n    FloatingActionButton fab;\r\n    Fragment fhome, fmap, fmatch, fprofile;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_home);\r\n\r\n        init();\r\n        setToolBarAndDrawer();\r\n        setBottomNavigator();\r\n\r\n        if(savedInstanceState == null) {\r\n            //To make first fragment is home when opening the app\r\n            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fhome).commit();\r\n        }\r\n    }\r\n\r\n    private void setBottomNavigator() {\r\n        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);\r\n        fab = (FloatingActionButton) findViewById(R.id.fab);\r\n\r\n        //To Disable item under Fab\r\n        Menu menuNav=bottomNavigationView.getMenu();\r\n        MenuItem nav_item2 = menuNav.findItem(R.id.placeholder);\r\n        nav_item2.setEnabled(false);\r\n\r\n        bottomNavigationView.setBackgroundColor(0); //To hide the color of nav view\r\n        bottomNavigationView.setOnNavigationItemSelectedListener(navListner);\r\n    }\r\n\r\n    private void setToolBarAndDrawer() {\r\n        setSupportActionBar(toolbar);\r\n        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.nav_drawer_open,R.string.nav_drawer_close);\r\n        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(android.R.color.white));\r\n        drawerLayout.addDrawerListener(toggle);\r\n        toggle.syncState();\r\n        navigationView.setNavigationItemSelectedListener(this);\r\n    }\r\n\r\n    private void init() {\r\n        drawerLayout = findViewById(R.id.drawer_layout);\r\n        toolbar = findViewById(R.id.toolbar);\r\n        navigationView = findViewById(R.id.nv);\r\n        navigationView.bringToFront();\r\n        fhome = new HomeFragment();\r\n        fmap = new MapFragment();\r\n        fmatch = new MatchFragment();\r\n        fprofile = new ProfileFragment();\r\n    }\r\n\r\n    @Override\r\n    public boolean onCreateOptionsMenu(Menu menu) {\r\n        getMenuInflater().inflate(R.menu.home_menu, menu);\r\n        menu.getItem(0).getIcon().mutate().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);\r\n        return true;\r\n    }\r\n\r\n    @Override\r\n    public boolean onOptionsItemSelected(@NonNull MenuItem item) {\r\n        if(item.getItemId() == R.id.notification)\r\n            startActivity(new Intent(this,NotificationActivity.class));\r\n        return super.onOptionsItemSelected(item);\r\n    }\r\n\r\n    @Override\r\n    public boolean onNavigationItemSelected(@NonNull MenuItem item) {\r\n        switch (item.getItemId()){\r\n            case R.id.drawer_share:\r\n\r\n                break;\r\n            case R.id.drawer_rate:\r\n\r\n                break;\r\n            case R.id.drawer_feedback:\r\n\r\n                break;\r\n            case R.id.drawer_about_us:\r\n\r\n                break;\r\n            case R.id.drawer_setting:\r\n\r\n                break;\r\n            case R.id.drawer_logout:\r\n                dialog = createDialog(\"Logout\",R.drawable.ic_baseline_exit_to_app_24);\r\n                dialog.create().show();\r\n                break;\r\n            default:\r\n                return false;\r\n        }\r\n        drawerLayout.closeDrawer(GravityCompat.START);\r\n        return false;\r\n    }\r\n\r\n    private AlertDialog.Builder createDialog(String title, int icon) {\r\n        return new AlertDialog.Builder(this)\r\n                .setTitle(title)\r\n                .setMessage(\"Are you sure?\")\r\n                .setIcon(icon)\r\n                .setNegativeButton(\"OK\", new DialogInterface.OnClickListener() {\r\n                    @Override\r\n                    public void onClick(DialogInterface dialog, int which) {\r\n                        PrefManager prefManager = new PrefManager(getApplicationContext());\r\n                        prefManager.setLogout();\r\n                        startActivity(new Intent(HomeActivity.this,SigninActivity.class));\r\n                        finish();\r\n                    }\r\n                }).setPositiveButton(\"Cancel\", new DialogInterface.OnClickListener() {\r\n                    @Override\r\n                    public void onClick(DialogInterface dialog, int which) {\r\n\r\n                    }\r\n                }).setCancelable(false);\r\n    }\r\n\r\n    @Override\r\n    public void onBackPressed() {\r\n        if(drawerLayout.isDrawerOpen(GravityCompat.START))\r\n            drawerLayout.closeDrawer(GravityCompat.START);\r\n        else\r\n            super.onBackPressed();\r\n    }\r\n\r\n    public void showPopup(View v) { //Fab Action\r\n\r\n        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(HomeActivity.this, R.style.BottomSheetTheme);\r\n        View bottomSheetView = LayoutInflater.from(getApplicationContext())\r\n                .inflate(R.layout.bottom_sheet_dialog, (LinearLayout)findViewById(R.id.bottom_sheet));\r\n\r\n        bottomSheetView.findViewById(R.id.hide_sheet).setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                bottomSheetDialog.dismiss();\r\n            }\r\n        });\r\n\r\n        bottomSheetView.findViewById(R.id.ilost).setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                startActivity(new Intent(HomeActivity.this, LostObjectDetailsActivity.class));\r\n                bottomSheetDialog.dismiss();\r\n            }\r\n        });\r\n\r\n        bottomSheetView.findViewById(R.id.ifound).setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                startActivity(new Intent(HomeActivity.this, FoundObjectActivity.class));\r\n                bottomSheetDialog.dismiss();\r\n            }\r\n        });\r\n\r\n        bottomSheetDialog.setContentView(bottomSheetView);\r\n        bottomSheetDialog.show();\r\n\r\n    }\r\n\r\n\r\n    private BottomNavigationView.OnNavigationItemSelectedListener navListner =\r\n            new BottomNavigationView.OnNavigationItemSelectedListener() {\r\n                @Override\r\n                public boolean onNavigationItemSelected(@NonNull MenuItem item) {\r\n                    Fragment selectedFragment = getSupportFragmentManager().getFragments().get(0);\r\n                    switch (item.getItemId()) {\r\n                        case R.id.miHome:\r\n                            if(!(selectedFragment instanceof HomeFragment))\r\n                                selectedFragment = fhome;\r\n                            break;\r\n                        case R.id.miMatch:\r\n                            if(!(selectedFragment instanceof MatchFragment))\r\n                                selectedFragment = fmatch;\r\n                            break;\r\n                        case R.id.miProfile:\r\n                            if(!(selectedFragment instanceof ProfileFragment))\r\n                                selectedFragment = fprofile;\r\n                            break;\r\n                        case R.id.miLocation:\r\n                            if(!(selectedFragment instanceof MapFragment))\r\n                                selectedFragment = fmap;\r\n                            break;\r\n                    }\r\n                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();\r\n                    return true;\r\n                }\r\n            };\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/helloworld/goodpoint/ui/HomeActivity.java	(revision 3e22dcd6b778afe345cadabb6b37a7c8570e04b2)
++++ app/src/main/java/com/helloworld/goodpoint/ui/HomeActivity.java	(date 1612908225220)
+@@ -77,7 +77,7 @@
+         navigationView = findViewById(R.id.nv);
+         navigationView.bringToFront();
+         fhome = new HomeFragment();
+-        fmap = new MapFragment();
++        fmap = new FoundMapFragment();
+         fmatch = new MatchFragment();
+         fprofile = new ProfileFragment();
+     }
+@@ -208,7 +208,7 @@
+                                 selectedFragment = fprofile;
+                             break;
+                         case R.id.miLocation:
+-                            if(!(selectedFragment instanceof MapFragment))
++                            if(!(selectedFragment instanceof FoundMapFragment))
+                                 selectedFragment = fmap;
+                             break;
+                     }
+Index: app/src/main/java/com/helloworld/goodpoint/ui/MapFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.helloworld.goodpoint.ui;\r\n\r\nimport android.Manifest;\r\nimport android.annotation.SuppressLint;\r\nimport android.content.Intent;\r\nimport android.content.pm.PackageManager;\r\nimport android.location.Location;\r\nimport android.os.Bundle;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.Nullable;\r\nimport androidx.core.app.ActivityCompat;\r\nimport androidx.fragment.app.Fragment;\r\n\r\nimport com.google.android.gms.location.FusedLocationProviderClient;\r\nimport com.google.android.gms.location.LocationServices;\r\nimport com.google.android.gms.maps.CameraUpdateFactory;\r\nimport com.google.android.gms.maps.GoogleMap;\r\nimport com.google.android.gms.maps.OnMapReadyCallback;\r\nimport com.google.android.gms.maps.SupportMapFragment;\r\nimport com.google.android.gms.maps.model.LatLng;\r\nimport com.google.android.gms.maps.model.Marker;\r\nimport com.google.android.gms.maps.model.MarkerOptions;\r\nimport com.google.android.gms.tasks.OnFailureListener;\r\nimport com.google.android.gms.tasks.OnSuccessListener;\r\nimport com.helloworld.goodpoint.R;\r\nimport com.helloworld.goodpoint.pojo.ObjectLocation;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\nimport java.util.Map;\r\nimport java.util.Random;\r\n\r\npublic class MapFragment extends Fragment {\r\n\r\n    private static final int MAP_CODE = 1;\r\n    SupportMapFragment mapFragment;\r\n    FusedLocationProviderClient client;\r\n    Location curLocation;\r\n    String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};\r\n    List<ObjectLocation> list;\r\n    Map<Marker,Integer>marker_id;\r\n\r\n    private OnMapReadyCallback callback = new OnMapReadyCallback() {\r\n\r\n        @SuppressLint(\"MissingPermission\")\r\n        @Override\r\n        public void onMapReady(GoogleMap googleMap) {\r\n            LatLng curLatLng = new LatLng(curLocation.getLatitude(), curLocation.getLongitude());\r\n\r\n            googleMap.setMyLocationEnabled(true);\r\n            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(curLatLng, 15));\r\n\r\n            list = getLocations();\r\n\r\n            for(ObjectLocation object: list) {\r\n                Marker marker = googleMap.addMarker(new MarkerOptions().position(object.getLatLng()));\r\n                marker_id.put(marker,object.getUserId());\r\n            }\r\n\r\n            googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {\r\n                @Override\r\n                public boolean onMarkerClick(Marker marker) {\r\n                    Intent intent = new Intent(getContext(),DetailsActivity.class);\r\n                    intent.putExtra(\"ID\",marker_id.get(marker));\r\n                    Toast.makeText(getContext(), \"\"+marker_id.get(marker), Toast.LENGTH_SHORT).show();\r\n                    startActivity(intent);\r\n                    return false;\r\n                }\r\n            });\r\n\r\n        }\r\n    };\r\n\r\n    private List<ObjectLocation> getLocations() {\r\n        List<ObjectLocation>ret = new ArrayList<>();\r\n        Random random = new Random();\r\n        for(int i=0;i<100;i++)\r\n            ret.add(new ObjectLocation(25+random.nextDouble()*10,22+random.nextDouble()*10,i));\r\n        return ret;\r\n    }\r\n\r\n    @Nullable\r\n    @Override\r\n    public View onCreateView(@NonNull LayoutInflater inflater,\r\n                             @Nullable ViewGroup container,\r\n                             @Nullable Bundle savedInstanceState) {\r\n        return inflater.inflate(R.layout.fragment_map, container, false);\r\n    }\r\n\r\n    @Override\r\n    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {\r\n        super.onViewCreated(view, savedInstanceState);\r\n\r\n        runGoogleMap();\r\n\r\n    }\r\n\r\n    private void runGoogleMap() {\r\n        if (ActivityCompat.checkSelfPermission(getContext(), permissions[0]) != PackageManager.PERMISSION_GRANTED &&\r\n                ActivityCompat.checkSelfPermission(getContext(), permissions[1]) != PackageManager.PERMISSION_GRANTED) {\r\n            requestPermissions(permissions, MAP_CODE);\r\n        }else {\r\n            init();\r\n            client.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {\r\n                @Override\r\n                public void onSuccess(@NonNull Location location) {\r\n                    curLocation = location;\r\n                    if (mapFragment != null) {\r\n                        mapFragment.getMapAsync(callback);\r\n                    }\r\n                }\r\n            }).addOnFailureListener(new OnFailureListener() {\r\n                @Override\r\n                public void onFailure(@NonNull Exception e) {\r\n                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();\r\n                }\r\n            });\r\n        }\r\n    }\r\n\r\n    private void init() {\r\n        mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);\r\n        client = LocationServices.getFusedLocationProviderClient(getContext());\r\n        marker_id = new HashMap<>();\r\n    }\r\n\r\n    @Override\r\n    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {\r\n        switch(requestCode){\r\n            case MAP_CODE:\r\n                if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){\r\n                    runGoogleMap();\r\n                }else {\r\n                    Toast.makeText(getContext(), \"You should allow to access location\", Toast.LENGTH_SHORT).show();\r\n                }\r\n                break;\r\n        }\r\n    }\r\n}
+===================================================================
+--- app/src/main/java/com/helloworld/goodpoint/ui/MapFragment.java	(revision 3e22dcd6b778afe345cadabb6b37a7c8570e04b2)
++++ app/src/main/java/com/helloworld/goodpoint/ui/FoundMapFragment.java	(date 1612908223249)
+@@ -13,6 +13,7 @@
+ 
+ import androidx.annotation.NonNull;
+ import androidx.annotation.Nullable;
++import androidx.appcompat.app.AlertDialog;
+ import androidx.core.app.ActivityCompat;
+ import androidx.fragment.app.Fragment;
+ 
+@@ -36,7 +37,7 @@
+ import java.util.Map;
+ import java.util.Random;
+ 
+-public class MapFragment extends Fragment {
++public class FoundMapFragment extends Fragment implements GoogleMap.OnMarkerClickListener {
+ 
+     private static final int MAP_CODE = 1;
+     SupportMapFragment mapFragment;
+@@ -45,6 +46,7 @@
+     String[] permissions = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
+     List<ObjectLocation> list;
+     Map<Marker,Integer>marker_id;
++    AlertDialog.Builder dialog;
+ 
+     private OnMapReadyCallback callback = new OnMapReadyCallback() {
+ 
+@@ -63,16 +65,7 @@
+                 marker_id.put(marker,object.getUserId());
+             }
+ 
+-            googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+-                @Override
+-                public boolean onMarkerClick(Marker marker) {
+-                    Intent intent = new Intent(getContext(),DetailsActivity.class);
+-                    intent.putExtra("ID",marker_id.get(marker));
+-                    Toast.makeText(getContext(), ""+marker_id.get(marker), Toast.LENGTH_SHORT).show();
+-                    startActivity(intent);
+-                    return false;
+-                }
+-            });
++            googleMap.setOnMarkerClickListener(FoundMapFragment.this);
+ 
+         }
+     };
+@@ -142,4 +135,15 @@
+                 break;
+         }
+     }
++
++    @Override
++    public boolean onMarkerClick(Marker marker) {
++
++        //TODO::create alert dialog
++
++        //Intent intent;
++        //intent.putExtra("ID",marker_id.get(marker));
++        //startActivity(intent);
++            return false;
++    }
+ }
+\ No newline at end of file
+Index: app/src/main/res/drawable/details_background.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<shape xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    android:shape=\"rectangle\">\r\n    <solid android:color=\"#FFCC80\"/>\r\n    <stroke android:width=\"@dimen/_1sdp\" android:color=\"#6FFF5722\"/>\r\n</shape>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/drawable/details_background.xml	(revision 3e22dcd6b778afe345cadabb6b37a7c8570e04b2)
++++ app/src/main/res/drawable/details_background.xml	(date 1612908104716)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <shape xmlns:android="http://schemas.android.com/apk/res/android"
+     android:shape="rectangle">
+-    <solid android:color="#FFCC80"/>
+-    <stroke android:width="@dimen/_1sdp" android:color="#6FFF5722"/>
++    <solid android:color="@color/table_detail"/>
++    <stroke android:width="@dimen/_1sdp" android:color="@color/border_detail"/>
+ </shape>
+\ No newline at end of file
+Index: app/src/main/res/layout/custom_map_dialog.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/custom_map_dialog.xml	(date 1612908223352)
++++ app/src/main/res/layout/custom_map_dialog.xml	(date 1612908223352)
+@@ -0,0 +1,129 @@
++<?xml version="1.0" encoding="utf-8"?>
++<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    android:orientation="vertical" android:layout_width="wrap_content"
++    android:layout_height="wrap_content">
++    <TextView
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:gravity="center"
++        android:text="something is found here.\nif it maybe yours, communicate with who found it"
++        android:textColor="@android:color/black"
++        android:background="@color/orange"
++        android:layout_margin="@dimen/_5sdp"
++        android:padding="@dimen/_5sdp"/>
++    <LinearLayout android:id="@+id/parent_table_details"
++            android:layout_width="match_parent"
++            android:layout_height="wrap_content"
++            android:layout_margin="@dimen/_5sdp"
++            android:padding="@dimen/_1sdp"
++            android:orientation="vertical"
++            android:background="@drawable/details_background">
++        <LinearLayout android:id="@+id/matched_detail"
++            android:orientation="vertical" android:layout_width="match_parent"
++            android:layout_height="wrap_content" android:weightSum="2"
++            android:padding="@dimen/_15sdp" android:background="@drawable/details_background">
++            <LinearLayout android:id="@+id/matched_name"
++                android:orientation="horizontal" android:layout_width="match_parent"
++                android:layout_height="wrap_content" android:weightSum="2">
++                <TextView
++                    android:layout_width="0dp"
++                    android:layout_height="match_parent"
++                    android:layout_weight="1"
++                    android:textSize="@dimen/_15ssp"
++                    android:textColor="@color/black"
++                    android:text="Name"/>
++
++                <TextView
++                    android:id="@+id/name_of_matching"
++                    android:layout_width="0dp"
++                    android:layout_height="match_parent"
++                    android:layout_weight="1"
++                    android:textSize="@dimen/_15ssp"
++                    android:text="Ahmed"
++                    android:gravity="end"/>
++            </LinearLayout>
++            <LinearLayout
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:orientation="vertical"
++                android:layout_margin="@dimen/_5sdp">
++                <View
++                    android:layout_width="match_parent"
++                    android:layout_height="@dimen/_1sdp"
++                    android:background="#6FFF5722"/>
++            </LinearLayout>
++            <LinearLayout android:id="@+id/matched_mail"
++                android:orientation="horizontal" android:layout_width="match_parent"
++                android:layout_height="wrap_content" android:weightSum="2">
++                <TextView
++                    android:id="@+id/mail_of_matching"
++                    android:layout_width="0dp"
++                    android:layout_height="match_parent"
++                    android:layout_weight="1"
++                    android:textSize="@dimen/_15ssp"
++                    android:textColor="@color/black"
++                    android:text="E-mail"/>
++                <TextView
++                    android:layout_width="0dp"
++                    android:layout_height="match_parent"
++                    android:layout_weight="1"
++                    android:textSize="@dimen/_15ssp"
++                    android:text="ahmed22@gmail.com"
++                    android:gravity="end"/>
++            </LinearLayout>
++            <LinearLayout
++                android:layout_width="match_parent"
++                android:layout_height="wrap_content"
++                android:orientation="vertical"
++                android:layout_margin="@dimen/_5sdp">
++                <View
++                    android:layout_width="match_parent"
++                    android:layout_height="@dimen/_1sdp"
++                    android:background="#6FFF5722"/>
++            </LinearLayout>
++            <LinearLayout android:id="@+id/matched_phone"
++                android:orientation="horizontal" android:layout_width="match_parent"
++                android:layout_height="wrap_content" android:weightSum="2">
++                <TextView
++                    android:layout_width="0dp"
++                    android:layout_height="match_parent"
++                    android:layout_weight="1"
++                    android:textSize="@dimen/_15ssp"
++                    android:textColor="@color/black"
++                    android:text="@string/PhoneNumber"/>
++                <TextView
++                    android:id="@+id/phone_of_matching"
++                    android:layout_width="0dp"
++                    android:layout_height="match_parent"
++                    android:layout_weight="1"
++                    android:textSize="@dimen/_15ssp"
++                    android:text="01234567890"
++                    android:gravity="end"/>
++            </LinearLayout>
++        </LinearLayout>
++    </LinearLayout>
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="wrap_content"
++        android:orientation="horizontal"
++        android:gravity="center">
++        <Button
++            android:id="@+id/call_btn"
++            android:layout_width="@dimen/_100sdp"
++            android:layout_height="wrap_content"
++            android:text="Call"
++            android:textColor="@color/white"
++            android:background="@drawable/details_btns"
++            android:textAllCaps="false"
++            android:layout_margin="@dimen/_15sdp"/>
++        <Button
++            android:id="@+id/mail_btn"
++            android:layout_width="@dimen/_100sdp"
++            android:layout_height="wrap_content"
++            android:text="Send mail"
++            android:textColor="@color/white"
++            android:background="@drawable/details_btns"
++            android:textAllCaps="false"
++            android:layout_margin="@dimen/_15sdp"/>
++    </LinearLayout>
++</LinearLayout>
+\ No newline at end of file
+Index: backend/notification/models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.db import models\r\n\r\nfrom find_losts.models import FoundItem\r\nfrom user_account.models import User\r\n\r\n\r\n# Create your models here.\r\n\r\nclass Notification(models.Model):\r\n    title = models.CharField(max_length=30, null=False)\r\n    description = models.CharField(max_length=100, null=True)\r\n    date_time = models.DateTimeField(auto_now_add=True)\r\n    is_sent = models.BooleanField(default=False)\r\n    is_read = models.BooleanField(default=False)\r\n    user_id = models.ForeignKey(User, related_name='notified', on_delete=models.CASCADE, db_column='user_id')\r\n\r\n    class Meta:\r\n        db_table = 'notification'\r\n\r\n\r\nclass MatchedNotification(models.Model):\r\n    id = models.OneToOneField(Notification, primary_key=True, on_delete=models.CASCADE, db_column='id')\r\n    user_id_matched = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user_id_matched')\r\n\r\n    class Meta:\r\n        db_table = 'matched_notification'\r\n\r\n\r\nclass CandidateNotification(models.Model):\r\n    id = models.OneToOneField(Notification, primary_key=True, on_delete=models.CASCADE, db_column='id')\r\n    candidating_item = models.ForeignKey(FoundItem, on_delete=models.CASCADE, db_column='candidating_item')\r\n\r\n    class Meta:\r\n        db_table = 'candidate_notification'\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/notification/models.py	(revision 3e22dcd6b778afe345cadabb6b37a7c8570e04b2)
++++ backend/notification/models.py	(date 1612567645714)
+@@ -16,19 +16,3 @@
+ 
+     class Meta:
+         db_table = 'notification'
+-
+-
+-class MatchedNotification(models.Model):
+-    id = models.OneToOneField(Notification, primary_key=True, on_delete=models.CASCADE, db_column='id')
+-    user_id_matched = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user_id_matched')
+-
+-    class Meta:
+-        db_table = 'matched_notification'
+-
+-
+-class CandidateNotification(models.Model):
+-    id = models.OneToOneField(Notification, primary_key=True, on_delete=models.CASCADE, db_column='id')
+-    candidating_item = models.ForeignKey(FoundItem, on_delete=models.CASCADE, db_column='candidating_item')
+-
+-    class Meta:
+-        db_table = 'candidate_notification'
+Index: app/src/main/java/com/helloworld/goodpoint/adapter/NotificationListAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.helloworld.goodpoint.adapter;\r\n\r\nimport android.content.Context;\r\nimport android.graphics.Color;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.ArrayAdapter;\r\nimport android.widget.Button;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.TextView;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.Nullable;\r\n\r\nimport com.helloworld.goodpoint.R;\r\nimport com.helloworld.goodpoint.pojo.NotificationItem;\r\n\r\nimport org.jetbrains.annotations.NotNull;\r\n\r\nimport java.text.SimpleDateFormat;\r\nimport java.util.Date;\r\nimport java.util.List;\r\nimport java.util.Locale;\r\n\r\nimport de.hdodenhof.circleimageview.CircleImageView;\r\n\r\npublic class NotificationListAdapter extends ArrayAdapter<NotificationItem> {\r\n\r\n    Context context;\r\n    List<NotificationItem> list;\r\n    Locale locale = new Locale(\"en\");\r\n\r\n    public NotificationListAdapter(@NonNull Context context, int resource, @NonNull List<NotificationItem> list) {\r\n        super(context, resource, list);\r\n        this.context = context;\r\n        this.list = list;\r\n    }\r\n\r\n    @NonNull\r\n    @Override\r\n    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {\r\n        View notificationItem = convertView;\r\n        ViewHolder viewHolder;\r\n        final int revposition = list.size()-position-1;\r\n\r\n        if(notificationItem == null){\r\n            notificationItem = createItem(parent);\r\n            viewHolder = new ViewHolder(notificationItem);\r\n            notificationItem.setTag(viewHolder);\r\n        }else\r\n            viewHolder = (ViewHolder) notificationItem.getTag();\r\n\r\n        if(list.get(revposition).isRead())\r\n            viewHolder.getLayout().setBackgroundColor(Color.WHITE);\r\n        else\r\n            viewHolder.getLayout().setBackgroundColor(context.getResources().getColor(R.color.light_orange));\r\n\r\n        setItemDetails(viewHolder,revposition);\r\n\r\n        return notificationItem;\r\n    }\r\n\r\n    private void setItemDetails(@NotNull ViewHolder viewHolder, int revposition) {\r\n        viewHolder.getTitle().setText(list.get(revposition).getTitle());\r\n        Date date = list.get(revposition).getDate();\r\n        SimpleDateFormat dateFormat = new SimpleDateFormat(\"dd/MM/yyyy HH:mm\",locale);\r\n        String date_time = dateFormat.format(date);\r\n        viewHolder.getDate().setText(date_time);\r\n        viewHolder.getDescription().setText(list.get(revposition).getDescription());\r\n        if(list.get(revposition).getImage() != null)\r\n            viewHolder.getImageView().setImageBitmap(list.get(revposition).getImage());\r\n    }\r\n\r\n    private View createItem(ViewGroup parent) {\r\n        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);\r\n        return inflater.inflate(R.layout.notification_item, parent, false);\r\n    }\r\n\r\n    private class ViewHolder{\r\n        private View convertView;\r\n        private TextView title, date, description;\r\n        private CircleImageView imageView;\r\n        private LinearLayout layout;\r\n\r\n        public ViewHolder(View view) {\r\n            this.convertView = view;\r\n        }\r\n\r\n        public TextView getTitle() {\r\n            if(title == null)\r\n                title = convertView.findViewById(R.id.notification_title);\r\n            return title;\r\n        }\r\n\r\n        public TextView getDate() {\r\n            if(date == null)\r\n                date = convertView.findViewById(R.id.notification_date);\r\n            return date;\r\n        }\r\n\r\n        public TextView getDescription() {\r\n            if(description == null)\r\n                description = convertView.findViewById(R.id.notification_description);\r\n            return description;\r\n        }\r\n\r\n        public CircleImageView getImageView() {\r\n            if(imageView == null)\r\n                imageView = convertView.findViewById(R.id.notification_image);\r\n            return imageView;\r\n        }\r\n\r\n        public LinearLayout getLayout() {\r\n            if(layout == null)\r\n                layout = convertView.findViewById(R.id.notification_layout);\r\n            return layout;\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/helloworld/goodpoint/adapter/NotificationListAdapter.java	(revision 3e22dcd6b778afe345cadabb6b37a7c8570e04b2)
++++ app/src/main/java/com/helloworld/goodpoint/adapter/NotificationListAdapter.java	(date 1612908225832)
+@@ -54,7 +54,7 @@
+         if(list.get(revposition).isRead())
+             viewHolder.getLayout().setBackgroundColor(Color.WHITE);
+         else
+-            viewHolder.getLayout().setBackgroundColor(context.getResources().getColor(R.color.light_orange));
++            viewHolder.getLayout().setBackgroundColor(context.getResources().getColor(R.color.table_detail));
+ 
+         setItemDetails(viewHolder,revposition);
+ 
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"colorPrimary\">#6200EE</color>\r\n    <color name=\"colorPrimaryDark\">#3700B3</color>\r\n    <color name=\"colorAccent\">#03DAC5</color>\r\n    <color name=\"white\">#FFFFFF</color>\r\n    <color name=\"light_white\">#EDE5E5</color>\r\n    <color name=\"black\">#000000</color>\r\n    <color name=\"orange\">#FF9800</color>\r\n    <color name=\"transparent\"> #00000000</color>\r\n    <color name=\"light_orange\">#FDA35D</color>\r\n\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/colors.xml	(revision 3e22dcd6b778afe345cadabb6b37a7c8570e04b2)
++++ app/src/main/res/values/colors.xml	(date 1612908224149)
+@@ -9,5 +9,7 @@
+     <color name="orange">#FF9800</color>
+     <color name="transparent"> #00000000</color>
+     <color name="light_orange">#FDA35D</color>
++    <color name="table_detail">#FFCC80</color>
++    <color name="border_detail">#6FFF5722</color>
+ 
+ </resources>
+\ No newline at end of file

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".ui.ActionActivity"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/nav_head_color">
+
+        <Button
+            android:id="@+id/button_lost"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/buttons"
+            android:shadowColor="#000000"
+            android:text="@string/button_lost"
+            android:textColor="#FA5F2F"
+            android:textSize="@dimen/_25ssp"
+            app:backgroundTint="#FFFFFF"
+            android:onClick="lost_btn"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_weight=".5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button_found"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_110sdp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/buttons"
+            android:shadowColor="#000000"
+            android:text="@string/button_found"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/_25ssp"
+            android:onClick="found_btn"/>
+    </RelativeLayout>
+</LinearLayout>

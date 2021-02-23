@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.WelcomeActivity">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />
+
+    <LinearLayout
+        android:id="@+id/dotsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"></LinearLayout>
+    <TextView
+        android:id="@+id/Skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/skip"
+        android:textAlignment="center"
+        android:textColor="#456191"
+        android:textSize="@dimen/_18ssp" />
+    <TextView
+        android:id="@+id/Nextt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/next"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:textAlignment="center"
+        android:textColor="#456191"
+        android:textSize="@dimen/_18sdp" />
+</RelativeLayout>

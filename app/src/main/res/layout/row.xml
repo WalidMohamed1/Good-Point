@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="@dimen/_5sdp"
+    android:layout_margin="@dimen/_13sdp"
+    android:layout_centerHorizontal="true">
+    <LinearLayout
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ObjStat"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginBottom="@dimen/_30sdp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/status"
+            android:textColor="@color/orange"/>
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:text="Its owner has been found"
+            android:textSize="@dimen/_13sdp"
+            android:id="@+id/status"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/_30sdp">
+        <ImageView
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_baseline_gallery_24"
+            android:layout_marginLeft="@dimen/_30sdp"
+            android:id="@+id/obj"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/objDetails"
+            android:textColor="#0000ff"
+            android:tag="@string/status"
+            android:textSize="@dimen/_14sdp"
+           android:id="@+id/details"/>
+    </LinearLayout>
+
+</LinearLayout>

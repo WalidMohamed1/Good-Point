@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/light_white"
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundTint="#7C1010"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/light_white"
+    >
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        app:srcCompat="@drawable/ic_baseline_location_on_24" />
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_marginStart="@dimen/_17sdp"
+        android:layout_marginTop="@dimen/_25sdp"
+        app:srcCompat="@drawable/ic_baseline_search_24"
+       />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView7"
+        android:fontFamily="@font/muli_black"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:text="Good Point"
+       android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textColor="#6D7B95"
+        android:textSize="@dimen/_30ssp" />
+
+
+
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginStart="@dimen/_135sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_39sdp"
+        app:srcCompat="@drawable/circle2" />
+</RelativeLayout>
+</ScrollView>

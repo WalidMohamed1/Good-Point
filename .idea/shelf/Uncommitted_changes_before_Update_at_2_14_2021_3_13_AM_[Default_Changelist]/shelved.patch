@@ -1,0 +1,79 @@
+Index: gradle/wrapper/gradle-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Tue Feb 09 04:57:41 EET 2021\r\ndistributionBase=GRADLE_USER_HOME\r\ndistributionPath=wrapper/dists\r\nzipStoreBase=GRADLE_USER_HOME\r\nzipStorePath=wrapper/dists\r\ndistributionUrl=https\\://services.gradle.org/distributions/gradle-6.1.1-all.zip\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>windows-1252
+===================================================================
+--- gradle/wrapper/gradle-wrapper.properties	(revision bdc9aa8245f3c256c29fd2b01d010752a9bc39be)
++++ gradle/wrapper/gradle-wrapper.properties	(date 1613251707729)
+@@ -1,6 +1,6 @@
+-#Tue Feb 09 04:57:41 EET 2021
++#Sat Feb 13 22:58:11 EET 2021
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+ zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-6.1.1-all.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-6.5-bin.zip
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\r\nbuildscript {\r\n    repositories {\r\n        google()\r\n        jcenter()\r\n    }\r\n    dependencies {\r\n        classpath 'com.android.tools.build:gradle:4.0.0'\r\n\r\n        // NOTE: Do not place your application dependencies here; they belong\r\n        // in the individual module build.gradle files\r\n    }\r\n}\r\nallprojects {\r\n    repositories {\r\n        google()\r\n        jcenter()\r\n        maven { url \"https://jitpack.io\" }\r\n    }\r\n}\r\n\r\ntask clean(type: Delete) {\r\n    delete rootProject.buildDir\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- build.gradle	(revision bdc9aa8245f3c256c29fd2b01d010752a9bc39be)
++++ build.gradle	(date 1613251708565)
+@@ -5,7 +5,7 @@
+         jcenter()
+     }
+     dependencies {
+-        classpath 'com.android.tools.build:gradle:4.0.0'
++        classpath 'com.android.tools.build:gradle:4.1.1'
+ 
+         // NOTE: Do not place your application dependencies here; they belong
+         // in the individual module build.gradle files
+Index: backend/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/.gitignore	(date 1613251708341)
++++ backend/.gitignore	(date 1613251708341)
+@@ -0,0 +1,1 @@
++.env
+Index: backend/user_account/jwt_auth.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/user_account/jwt_auth.py	(date 1613251708574)
++++ backend/user_account/jwt_auth.py	(date 1613251708574)
+@@ -0,0 +1,25 @@
++import jwt
++from rest_framework import authentication,exceptions
++from django.conf import settings
++from .models import User
++
++class JWTAuthentication(authentication.BaseAuthentication):
++
++    def authenticate(self, request):
++        auth_data = authentication.get_authorization_header(request)
++
++        if not auth_data:
++            return None
++
++        prefix,token = auth_data.decode('utf-8').split(' ')
++
++        try:
++            payload = jwt.decode(token,settings.JWT_SECRET_KEY)
++            user = User.objects.get(email=payload['email'])
++            return (user, token)
++        except jwt.DecodeError as identifier:
++            raise exceptions.AuthenticationFailed('invalid')
++        except jwt.ExpiredSignatureError as identifier:
++            raise exceptions.AuthenticationFailed('expired')
++
++        return super().authenticate(request)
+\ No newline at end of file

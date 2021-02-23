@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="white">#FFFFFF</color>
+    <color name="light_white">#EDE5E5</color>
+    <color name="black">#000000</color>
+    <color name="orange">#FF9800</color>
+    <color name="transparent"> #00000000</color>
+    <color name="light_orange">#FDA35D</color>
+    <color name="table_detail">#FFCC80</color>
+    <color name="border_detail">#6FFF5722</color>
+
+</resources>

@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.myapplication.MainActivity">
+    <item
+        android:id="@+id/TakeCurrLocation"
+        android:orderInCategory="100"
+        android:title="@string/CurrentLocation"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/DeteLocation"
+        android:orderInCategory="100"
+        android:title="@string/LocatingPlace"
+        app:showAsAction="never" />
+</menu>

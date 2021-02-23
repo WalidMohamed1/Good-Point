@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.lostFoundObject.PersonFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_20ssp"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="@string/AddPersonDetails" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="@dimen/_248sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/_17sdp"
+        android:textSize="@dimen/_15ssp"
+        app:boxCornerRadiusBottomStart="5dp"
+        >
+        <EditText
+            android:id="@+id/PersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="@dimen/_15ssp"
+            android:hint="@string/PersonName"
+            android:autofillHints="@string/PersonName"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_17ssp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="@string/AddImageOfPerson" />
+    <Button
+        android:id="@+id/add_new__photo"
+        android:layout_width="@dimen/_70sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_gravity="center"
+        android:background="#00FFFFFF"
+        android:drawableBottom="@drawable/ic_photo"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/ADDP"
+        android:visibility="gone">
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="horizontal"
+            android:fillViewport="true"
+            android:layout_margin="@dimen/_10sdp">
+
+            <LinearLayout
+                android:id="@+id/Gallery2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/imageView"
+        style="@android:style/Widget.ImageButton"
+        android:layout_width="@dimen/_130sdp"
+        android:background="#FFFFFF"
+        android:layout_height="@dimen/_130sdp"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_baseline_gallery_24"
+        android:visibility="gone"/>
+
+</LinearLayout>

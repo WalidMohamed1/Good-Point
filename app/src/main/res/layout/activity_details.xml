@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/img_detail"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_gravity="center" android:src="@drawable/ic_home"
+            android:layout_margin="@dimen/_15sdp"/>
+        <LinearLayout android:id="@+id/parent_table_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_5sdp"
+            android:padding="@dimen/_1sdp"
+            android:orientation="vertical"
+            android:background="@drawable/details_background">
+
+            <LinearLayout
+                android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:weightSum="2"
+                android:padding="@dimen/_15sdp" android:background="@drawable/details_background">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/black"
+                    android:text="Main Category"/>
+                <TextView
+                    android:id="@+id/main_cat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_15ssp"
+                    android:text="@string/Item"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/sub_cat"
+                android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:weightSum="2"
+                android:padding="@dimen/_15sdp" android:background="@drawable/details_background">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/black"
+                    android:text="Sub Category"/>
+                <TextView
+                    android:id="@+id/item_cat"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_15ssp"
+                    android:text="Bag"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/person_name"
+                android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:weightSum="2"
+                android:padding="@dimen/_15sdp" android:background="@drawable/details_background">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/black"
+                    android:text="Name"/>
+                <TextView
+                    android:id="@+id/lost_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_15ssp"
+                    android:text="Mohamed"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/brand_detail"
+                android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:weightSum="2"
+                android:padding="@dimen/_15sdp" android:background="@drawable/details_background">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/black"
+                    android:text="@string/TheBrand"/>
+                <TextView
+                    android:id="@+id/brand_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_15ssp"
+                    android:text="dejavu"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/color_detail"
+                android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:weightSum="2"
+                android:padding="@dimen/_15sdp" android:background="@drawable/details_background">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/black"
+                    android:text="@string/ColorOfObject"/>
+                <TextView
+                    android:id="@+id/color_item"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_15ssp"
+                    android:text="@string/Brown"
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/addr_loc"
+                android:orientation="horizontal" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:weightSum="2"
+                android:padding="@dimen/_15sdp" android:background="@drawable/details_background">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/black"
+                    android:text="Address Location"/>
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/_15ssp"
+                    android:text="Address,address,..."
+                    android:gravity="end"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_15sdp" android:background="@drawable/details_background">
+                <LinearLayout android:id="@+id/lost_date"
+                    android:orientation="horizontal" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:weightSum="2">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/_15ssp"
+                        android:textColor="@color/black"
+                        android:text="Lost Date"/>
+                    <TextView
+                        android:id="@+id/date_of_lost"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/_15ssp"
+                        android:text="2021-1-27"
+                        android:gravity="end"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/lost_found_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/_5sdp">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="#6FFF5722"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/found_date"
+                    android:orientation="horizontal" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:weightSum="2">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/_15ssp"
+                        android:textColor="@color/black"
+                        android:text="Found Date"/>
+                    <TextView
+                        android:id="@+id/date_of_found"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/_15ssp"
+                        android:text="2021-1-27"
+                        android:gravity="end"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/matched_detail"
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:weightSum="2"
+                android:padding="@dimen/_15sdp" android:background="@drawable/details_background">
+                <LinearLayout android:id="@+id/matched_name"
+                    android:orientation="horizontal" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:weightSum="2">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/_15ssp"
+                        android:textColor="@color/black"
+                        android:text="Matched Name"/>
+
+                    <TextView
+                        android:id="@+id/name_of_matching"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/_15ssp"
+                        android:text="Ahmed"
+                        android:gravity="end"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/_5sdp">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="#6FFF5722"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/matched_mail"
+                    android:orientation="horizontal" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:weightSum="2">
+                    <TextView
+                        android:id="@+id/mail_of_matching"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/_15ssp"
+                        android:textColor="@color/black"
+                        android:text="E-mail"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/_15ssp"
+                        android:text="ahmed22@gmail.com"
+                        android:gravity="end"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/_5sdp">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_1sdp"
+                        android:background="#6FFF5722"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/matched_phone"
+                    android:orientation="horizontal" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:weightSum="2">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/_15ssp"
+                        android:textColor="@color/black"
+                        android:text="@string/PhoneNumber"/>
+                    <TextView
+                        android:id="@+id/phone_of_matching"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/_15ssp"
+                        android:text="01234567890"
+                        android:gravity="end"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <Button
+                android:id="@+id/call_btn"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:text="Call"
+                android:textColor="@color/white"
+                android:background="@drawable/details_btns"
+                android:textAllCaps="false"
+                android:layout_margin="@dimen/_15sdp"/>
+            <Button
+                android:id="@+id/mail_btn"
+                android:layout_width="@dimen/_100sdp"
+                android:layout_height="wrap_content"
+                android:text="Send mail"
+                android:textColor="@color/white"
+                android:background="@drawable/details_btns"
+                android:textAllCaps="false"
+                android:layout_margin="@dimen/_15sdp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"/>
+    </LinearLayout>
+</ScrollView>

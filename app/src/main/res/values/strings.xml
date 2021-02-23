@@ -1,0 +1,162 @@
+<resources>
+    <string name="app_name">Good Point</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ObjectMissing">Object Missing</string>
+
+    <string name="nav_drawer_open">Open navigation drawer</string>
+    <string name="nav_drawer_close">Close navigation drawer</string>
+    <string name="ItemMissing">Item Missing</string>
+    <string name="dateOfMissing">Date of missing</string>
+    <string name="LostItemDetails">Lost object details</string>
+    <string name="TypeOfTheObject">Type of the object</string>
+    <string name="Person">Person</string>
+    <string name="Item">Item</string>
+    <string name="AddImageOfPerson">Add image of person</string>
+    <string name="AddItemDetails">Add item details</string>
+    <string name="AddPersonDetails">Add Person details</string>
+    <string name="SerialID">Serial ID(optional)</string>
+    <string name="Match">Match</string>
+    <string name="Description">Description</string>
+    <string name="ColorOfObject">Color</string>
+    <string name="ColorOfObject2">Color<font color='#FF0000'> *</font></string>
+    <string name="ObjStat">Object status</string>
+    <string name="signup_success">Sign up was successful.</string>
+    <string name="type">Type :<font color='#FF0000'> *</font></string>
+    <string name="status">status</string>
+
+    <string name="hasfound">Has found</string>
+    <string name="objDetails"><a href="" >Object Details</a></string>
+
+    <string name="goToLogin">Go To Login</string>
+    <string name="text_start">You can start using the application now.</string>
+
+    <string-array name="Types">
+        <item>Type</item>
+        <item>Phone</item>
+        <item>Labtop</item>
+        <item>Wallet</item>
+        <item>Bag</item>
+        <item>Watch</item>
+        <item>Money</item>
+        <item>Glasses or sunglasses</item>
+        <item>Books</item>
+        <item>Others</item>
+    </string-array>
+    <string name="City">City<font color='#FF0000'> *</font></string>
+    <string name="Cairo">Cairo</string>
+    <string name="Alexandria">Alexandria</string>
+    <string name="ShubraElKheima">Shubra El Kheima</string>
+    <string name="Giza">Giza</string>
+    <string name="PortSaid">Port Said</string>
+    <string name="Suez">Suez</string>
+    <string name="ElMahallaElKubra">El Mahalla El Kubra</string>
+    <string name="Luxor">Luxor</string>
+    <string name="Mansoura">Mansoura</string>
+    <string name="Tanta">Tanta</string>
+    <string name="Asyut">Asyut</string>
+    <string name="Ismailia">Ismailia</string>
+    <string name="Faiyum">Faiyum</string>
+    <string name="Zagazig">Zagazig</string>
+    <string name="Damietta">Damietta</string>
+    <string name="Aswan">Aswan</string>
+    <string name="Minya">Minya</string>
+    <string name="BeniSuef">Beni Suef</string>
+    <string name="Hurghada">Hurghada</string>
+    <string name="Qena">Qena</string>
+    <string name="Sohag">Sohag</string>
+    <string name="ShibinElKom">Shibin El Kom</string>
+    <string name="Banha">Banha</string>
+    <string name="Arish">Arish</string>
+    <string name="Red"> Red</string>
+    <string name="Yellow">Yellow</string>
+    <string name="Blue">Blue</string>
+    <string name="Orange">Orange</string>
+    <string name="Green">Green</string>
+    <string name="Violet">Violet</string>
+    <string name="Brown">Brown</string>
+    <string name="Magenta">Magenta</string>
+    <string name="Tan">Tan</string>
+    <string name="Cyan">Cyan</string>
+    <string name="Olive">Olive</string>
+    <string name="Pink">Pink</string>
+    <string name="Black">Black</string>
+    <string name="White">White</string>
+    <string name="Gray">Gray</string>
+    <string name="Purple">Purple</string>
+    <string name="TheBrand">The brand</string>
+    <string name="TheBrand2">The brand<font color='#FF0000'> *</font></string>
+    <string name="ObjectFound">Object found</string>
+    <string name="dateOfFound">Date of found</string>
+    <string name="ObjectLocation">Location</string>
+    <string name="FoundItemDetails">Found object details</string>
+    <string name="CurrentLocation">My current location</string>
+    <string name="LocatingPlace">Locating the place</string>
+    <string name="title_activity_detect_location">Map</string>
+
+    <string name="UserName"> User Name<font color='#FF0000'> *</font></string>
+    <string name="Email"> Email<font color='#FF0000'> *</font></string>
+    <string name="Email2"> Email</string>
+    <string name="Password"> Password<font color='#FF0000'> *</font></string>
+    <string name="Password2"> Password</string>
+    <string name="PhoneNumber"> Phone Number</string>
+    <string name="PhoneNumber2"> Phone Number<font color='#FF0000'> *</font></string>
+    <string name="BirthOfDate"> Birth of date</string>
+    <string name="CreateAccount">Create Account</string>
+    <string name="GoodPoint"> Good Point </string>
+    <string name="CreateNewAccount">Create New Account</string>
+    <string name="SignIn">SIGN IN</string>
+    <string name="RememberMe">Remember Me</string>
+    <string name="or">OR</string>
+    <string name="Signup">Sign up</string>
+    <string name="ForgetPassword">Forget Password?</string>
+
+    <string name="Home">Home</string>
+    <string name="Matched">Matched</string>
+    <string name="Location">Location</string>
+    <string name="Profile">Profile</string>
+    <string name="Add_point"><b>Put point</b></string>
+    <string name="Lost">Lost objects</string>
+    <string name="Found">Found objects</string>
+    <string name="Hi_message"><b>Hi, User</b></string>
+    <string name="Daily_message">Good Evening</string>
+    <string name="Losses"><b>The Losses</b></string>
+    <string name="Founds">The Findings</string>
+    <string name="userName"> User Name</string>
+
+    <string name="button_lost"><b><i>Lost</i></b></string>
+    <string name="button_found"><b><i>Found</i></b></string>
+
+    <string name="capture">Capture Image</string>
+    <string name="choose">Choose From Gallery</string>
+
+    <string name="delete">Delete</string>
+
+
+    <string name="HelpOthers">Help others easy if you found anything</string>
+    <string name="Skip">Skip</string>
+    <string name="skip">Skip</string>
+    <string name="play_again">play_again</string>
+    <string name="next">Next  ></string>
+    <string name="next_btn">Next</string>
+    <string name="start">Start</string>
+    <string name="forget_pass_details">provide your account\'s email for which you want to reset your password</string>
+    <string name="make_selection">Make Selection</string>
+    <string name="via_sms">via sms:</string>
+    <string name="make_selection_detail1">+923335545644</string>
+    <string name="via_mail">via mail:</string>
+    <string name="mak_selection_details2">example@gmail.com</string>
+    <string name="forget_password2">Forget Password</string>
+    <string name="new_credentials">New credentials</string>
+    <string name="new_credentials_details">Your identity has been verified set your new password</string>
+    <string name="password_updated">Password Updated</string>
+    <string name="updated_details">Your Password has been updated</string>
+    <string name="login1">Login</string>
+    <string name="code">Code</string>
+    <string name="code_verification">Verification</string>
+    <string name="verify_code">Verify Code</string>
+    <string name="find_your_missed">Find your missed</string>
+    <string name="item_easy">item easy</string>
+    <string name="ImageItem">Do you have a picture for this item?</string>
+    <string name="PersonName">Person name</string>
+</resources>
