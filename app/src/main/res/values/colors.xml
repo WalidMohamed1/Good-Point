@@ -11,5 +11,5 @@
     <color name="light_orange">#FDA35D</color>
     <color name="table_detail">#FFCC80</color>
     <color name="border_detail">#6FFF5722</color>
-
+    <color name="tfe_semi_transparent">#66000000</color>
 </resources>

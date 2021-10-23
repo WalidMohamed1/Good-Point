@@ -87,7 +87,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:passwordToggleDrawable="@drawable/show_password"
-                    app:passwordToggleEnabled="true">
+                    app:passwordToggleEnabled="true"
+                    android:id="@+id/tilPass">>
 
                     <EditText
                         android:id="@+id/pass"

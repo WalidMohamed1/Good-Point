@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".ui.ID_cardDetection"
+    xmlns:tools="http://schemas.android.com/tools">
+   <RelativeLayout
+       android:id="@+id/ParentLayout"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/_450sdp">
+      <androidx.camera.view.PreviewView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:id="@+id/PV"
+          />
+   </RelativeLayout>
+   <ImageButton
+       android:id="@+id/IDCard"
+       android:layout_width="@dimen/_80sdp"
+       android:layout_height="@dimen/_55sdp"
+       android:layout_gravity="center"
+       android:layout_marginTop="@dimen/_20sdp"
+       android:background="#00FFFFFF"
+       android:src="@drawable/ic_realcam"
+       android:onClick="check_there"
+       />
+</LinearLayout>

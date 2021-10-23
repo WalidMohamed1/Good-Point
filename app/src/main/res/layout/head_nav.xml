@@ -19,7 +19,7 @@
         app:civ_border_color="@android:color/black"/>
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/namenav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10sdp"
@@ -28,7 +28,7 @@
         android:textColor="@android:color/white"/>
 
     <TextView
-        android:id="@+id/mail"
+        android:id="@+id/mailnav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_5sdp"

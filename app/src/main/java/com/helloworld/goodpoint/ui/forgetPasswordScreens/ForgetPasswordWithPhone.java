@@ -32,14 +32,12 @@ public class ForgetPasswordWithPhone extends AppCompatActivity {
                 if (phoneInput.isEmpty()) {
                     phone.setError("Field can't be empty");
                     phone.requestFocus();
-                }
-              else if (phone.length() < 11) {
-                        phone.setError("Please enter a valid phone number");
-                        phone.requestFocus();
-                    }
-                    else {
+                } else if (phone.length() < 11) {
+                    phone.setError("Please enter a valid phone number");
+                    phone.requestFocus();
+                } else {
                     startActivity(new Intent(ForgetPasswordWithPhone.this, VerifiyCode.class));
-                    finish();
+
                 }
             }
         });

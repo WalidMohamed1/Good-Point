@@ -38,7 +38,7 @@ public class check_registration extends AppCompatActivity {
         gotoLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(check_registration.this,SigninActivity.class));
+                //startActivity(new Intent(check_registration.this,SigninActivity.class));//update it
                 finish();
             }
         });

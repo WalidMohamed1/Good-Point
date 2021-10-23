@@ -78,8 +78,8 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:textSize="@dimen/_15ssp"
-            android:hint="@string/TheBrand2"
-            android:autofillHints="@string/TheBrand2"
+            android:hint="@string/TheBrand"
+            android:autofillHints="@string/TheBrand"
             android:inputType="text"
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -98,8 +98,8 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:textSize="@dimen/_15ssp"
-            android:hint="@string/ColorOfObject2"
-            android:autofillHints="@string/ColorOfObject2"
+            android:hint="@string/ColorOfObject"
+            android:autofillHints="@string/ColorOfObject"
             android:inputType="text"
             />
     </com.google.android.material.textfield.TextInputLayout>

@@ -26,14 +26,14 @@ public class MakeSelection extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MakeSelection.this, ForgetPasswordWithPhone.class));
-                finish();
+
             }
         });
         email_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MakeSelection.this, ForgetPasswordWithEmail.class));
-                finish();
+
             }
         });
         back_btn.setOnClickListener(new View.OnClickListener() {

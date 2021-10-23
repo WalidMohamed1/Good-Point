@@ -1,0 +1,21 @@
+#views
+class MapView(generics.ListAPIView):
+    queryset = FoundItem.objects.select_related('id')
+    serializer_class = MapSerializer
+
+#serializers
+class MapSerializer(serializers.ModelSerializer):
+    longitude = serializers.DecimalField(max_digits=14, decimal_places=10, source='id.longitude')
+    latitude = serializers.DecimalField(max_digits=14, decimal_places=10, source='id.latitude')
+    user_id = serializers.IntegerField(source='id.user_id.id')
+
+    class Meta:
+        model = FoundItem
+        fields = ['longitude', 'latitude', 'user_id']
+
+
+#url
+from user_account import views as user_view
+
+    path('founder/<int:id>/', user_view.WhoFoundItemView.as_view(), name='who found item'),
+    path('map/',views.MapView.as_view(), name='map'),

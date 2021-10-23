@@ -27,7 +27,7 @@ SECRET_KEY = 'o$!0f@2-*+x-m9-=h*0-2q25jvx(&2+z)6%7ir)@y_7nvlg9f('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,13 +43,15 @@ INSTALLED_APPS = [
     'find_losts',
     'notification',
     'rest_framework',
-    'rest_framework_simplejwt.token_blacklist'
+    'rest_framework_simplejwt.token_blacklist',
+    'django_filters',
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 SIMPLE_JWT = {
@@ -96,7 +98,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Good_Point',
         'USER': 'postgres',
-        'PASSWORD': '[,]f,dkj2020',
+        'PASSWORD': '[,]f,dkj2020',#20111998
         'HOST': 'localhost',
         'PORT': '5432'
     }
@@ -146,9 +148,18 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
-"""
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR,'static')
-)
-"""
+#SMTP Configuration
+#New
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = '' #os.environ.get('username') sender
+EMAIL_HOST_PASSWORD = ''
+#"""
+#STATICFILES_DIRS = (
+ #   os.path.join(BASE_DIR,'static')
+#)
+#"""

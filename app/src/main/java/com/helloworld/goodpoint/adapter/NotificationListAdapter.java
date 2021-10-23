@@ -2,6 +2,7 @@ package com.helloworld.goodpoint.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,8 +14,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.google.gson.JsonObject;
 import com.helloworld.goodpoint.R;
 import com.helloworld.goodpoint.pojo.NotificationItem;
+import com.helloworld.goodpoint.pojo.User;
+import com.helloworld.goodpoint.retrofit.ApiClient;
+import com.helloworld.goodpoint.retrofit.ApiInterface;
+import com.helloworld.goodpoint.ui.PrefManager;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -24,6 +30,9 @@ import java.util.List;
 import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class NotificationListAdapter extends ArrayAdapter<NotificationItem> {
 
@@ -68,8 +77,35 @@ public class NotificationListAdapter extends ArrayAdapter<NotificationItem> {
         String date_time = dateFormat.format(date);
         viewHolder.getDate().setText(date_time);
         viewHolder.getDescription().setText(list.get(revposition).getDescription());
-        if(list.get(revposition).getImage() != null)
-            viewHolder.getImageView().setImageBitmap(list.get(revposition).getImage());
+        switch (list.get(revposition).getType()){
+            case 1:
+            case 2:
+                viewHolder.getImageView().setImageResource(R.drawable.ic_account_circle);
+                break;
+            case 3:
+                viewHolder.getImageView().setImageResource(R.drawable.ic_baseline_fact_check_24);
+                break;
+            case 4:
+            case 5:
+                viewHolder.getImageView().setImageResource(R.drawable.ic_baseline_assignment_turned_in_24);
+                break;
+        }
+
+        if(!list.get(revposition).isSent()){
+            ApiInterface apiInterface = ApiClient.getApiClient(new PrefManager(context).getNGROKLink()).create(ApiInterface.class);
+            Call<JsonObject> call = apiInterface.updateSent(list.get(revposition).getId(),true);
+            call.enqueue(new Callback<JsonObject>() {
+                @Override
+                public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                    Log.e("TAG", "onResponse: "+response.body());
+                }
+
+                @Override
+                public void onFailure(Call<JsonObject> call, Throwable t) {
+                    Log.e("TAG", "onFailure: "+t.getMessage());
+                }
+            });
+        }
     }
 
     private View createItem(ViewGroup parent) {

@@ -23,7 +23,7 @@ public class ForgetPasswordWithEmail extends AppCompatActivity {
         setContentView(R.layout.activity_forget_password);
         next_btn = (Button) findViewById(R.id.Next_btn);
         back_btn = (ImageView) findViewById(R.id.back_btn);
-        email= (EditText) findViewById(R.id.Email);
+        email = (EditText) findViewById(R.id.Email);
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,10 +34,9 @@ public class ForgetPasswordWithEmail extends AppCompatActivity {
                 } else if (!Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()) {
                     email.setError("Please enter a valid email address");
                     email.requestFocus();
-                }
-                else {
+                } else {
                     startActivity(new Intent(ForgetPasswordWithEmail.this, VerifiyCode.class));
-                    finish();
+
                 }
             }
         });

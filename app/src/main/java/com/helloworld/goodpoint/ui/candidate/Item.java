@@ -6,13 +6,7 @@ import java.util.List;
 public class Item {
 
     private String itemTitle;
-    private int ItemImage;
-    private List<SubItem> subItemList;
-
-    public Item(String itemTitle, List<SubItem> subItemList) {
-        this.itemTitle = itemTitle;
-        this.subItemList = subItemList;
-    }
+    private List<SubItem> subItem;
 
     public String getItemTitle() {
         return itemTitle;
@@ -22,19 +16,16 @@ public class Item {
         this.itemTitle = itemTitle;
     }
 
-    public List<SubItem> getSubItemList() {
-        return subItemList;
+    public List<SubItem> getSubItem() {
+        return subItem;
     }
 
-    public void setSubItemList(List<SubItem> subItemList) {
-        this.subItemList = subItemList;
-    }
-    public int getItemImage() {
-        return ItemImage;
+    public void setSubItem(List<SubItem> subItem) {
+        this.subItem = subItem;
     }
 
-    public void setItemImage(int itemImage) {
-        ItemImage = itemImage;
+    public Item(String itemTitle, List<SubItem> subItem) {
+        this.itemTitle = itemTitle;
+        this.subItem = subItem;
     }
-
 }

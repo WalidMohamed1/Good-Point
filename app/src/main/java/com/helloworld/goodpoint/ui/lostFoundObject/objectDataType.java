@@ -1,6 +1,7 @@
 package com.helloworld.goodpoint.ui.lostFoundObject;
 
 import android.graphics.Bitmap;
+import android.net.Uri;
 
 import java.util.List;
 

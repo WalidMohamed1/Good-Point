@@ -30,14 +30,38 @@
             android:layout_height="100dp"
             android:background="@drawable/wave" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_item"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tablet"
+            android:id="@+id/tv_item_title1"
+            android:textColor="@color/black"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/muli_black"
+            android:textSize="@dimen/_40ssp"
+            />
 
-            </androidx.recyclerview.widget.RecyclerView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:padding="@dimen/_20sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rv_sub_item1"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
 
+        </androidx.recyclerview.widget.RecyclerView>
 
+        <Button
+            android:id="@+id/d_btn"
+            android:layout_margin="@dimen/_30sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:fontFamily="@font/muli_black"
+            android:textSize="@dimen/_15sdp"
+            android:background="@color/orange"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
        </LinearLayout>
 </ScrollView>

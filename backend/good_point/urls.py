@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt import views as jwt_views
+from django.contrib.auth import views as auth_view #new
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -25,5 +26,13 @@ urlpatterns = [
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('auth/', include('user_account.url'), name='authentications'),
     path('losts/',include('find_losts.url'), name='losts'),
-    
+    path('notification/',include('notification.url'), name='notification'),
+
+    path('reset_password/', auth_view.PasswordResetView.as_view(), name="password_reset"), #new
+    path('reset_password_sent/', auth_view.PasswordResetDoneView.as_view(), name="password_reset_done"), #new
+    path('reset/<uidb64>/<token>/', auth_view.PasswordResetConfirmView.as_view(), name="password_reset_confirm"), #new
+    path('reset_password_complete/', auth_view.PasswordResetCompleteView.as_view(), name="password_reset_complete"), #new
+
+
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

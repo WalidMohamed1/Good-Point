@@ -22,13 +22,13 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
             android:background="@drawable/ic_prof_pic"
             android:layout_gravity="center" />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/above_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -38,7 +38,7 @@
             android:textColor="@android:color/white"/>
 
         <TextView
-            android:id="@+id/mail"
+            android:id="@+id/above_mail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -171,7 +171,7 @@
                     android:src="@drawable/ic_baseline_person_24"
                     app:tint="#FA5F2F" />
                 <TextView
-                    android:id="@+id/username"
+                    android:id="@+id/username_p"
                     android:textStyle="bold"
                     android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
@@ -213,7 +213,7 @@
                     android:src="@drawable/ic_baseline_phone_android_24"
                     app:tint="#FA5F2F"/>
                 <TextView
-                    android:id="@+id/phone"
+                    android:id="@+id/phone_p"
                     android:textStyle="bold"
                     android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
@@ -233,7 +233,7 @@
                     android:src="@drawable/ic_baseline_room_24"
                     app:tint="#FA5F2F"/>
                 <TextView
-                    android:id="@+id/city"
+                    android:id="@+id/city_p"
                     android:textStyle="bold"
                     android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"

@@ -1,0 +1,1334 @@
+Index: app/src/main/res/layout/fragment_profile.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<ScrollView\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    tools:context=\".ui.ProfileFragment\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\">\r\n\r\n    <LinearLayout\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"match_parent\"\r\n        android:orientation=\"vertical\">\r\n\r\n        <LinearLayout\r\n        android:orientation=\"vertical\"\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:padding=\"@dimen/_8sdp\"\r\n        android:background=\"@drawable/nav_head_color\"\r\n        android:gravity=\"center\">\r\n\r\n        <de.hdodenhof.circleimageview.CircleImageView\r\n            android:id=\"@+id/profile_pic\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:background=\"@drawable/ic_prof_pic\"\r\n            android:layout_gravity=\"center\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/above_name\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"center\"\r\n            android:textSize=\"@dimen/_20ssp\"\r\n            android:text=\"@string/userName\"\r\n            android:textStyle=\"bold\"\r\n            android:textColor=\"@android:color/white\"/>\r\n\r\n        <TextView\r\n            android:id=\"@+id/above_mail\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_gravity=\"center\"\r\n            android:textSize=\"@dimen/_15ssp\"\r\n            android:text=\"goodpoint@sci.asu.edu.eg\"\r\n            android:textColor=\"@android:color/white\" />\r\n        </LinearLayout>\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"horizontal\"\r\n            android:paddingTop=\"@dimen/_10sdp\">\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:orientation=\"vertical\">\r\n\r\n                <TextView\r\n                    android:id=\"@+id/lost_no\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:paddingLeft=\"@dimen/_35sdp\"\r\n                    android:text=\"0\"\r\n                    android:textColor=\"@color/black\"\r\n                    android:textSize=\"@dimen/_20ssp\"\r\n                    android:textStyle=\"bold\">\r\n                </TextView>\r\n                <TextView\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:text=\"Lost\"\r\n                    android:textSize=\"@dimen/_14ssp\"\r\n                    android:paddingLeft=\"@dimen/_25sdp\">\r\n                </TextView>\r\n\r\n\r\n            </LinearLayout>\r\n\r\n            <View\r\n                android:layout_width=\"@dimen/_1sdp\"\r\n                android:layout_height=\"@dimen/_50sdp\"\r\n                android:background=\"#808080\"\r\n                android:layout_marginLeft=\"@dimen/_35sdp\"/>\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:orientation=\"vertical\">\r\n\r\n                <TextView\r\n                    android:id=\"@+id/match_no\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:paddingLeft=\"@dimen/_55sdp\"\r\n                    android:text=\"0\"\r\n                    android:textColor=\"#C4207720\"\r\n                    android:textSize=\"@dimen/_20ssp\"\r\n                    android:textStyle=\"bold\">\r\n                </TextView>\r\n                <TextView\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:text=\"Matched\"\r\n                    android:textSize=\"@dimen/_14ssp\"\r\n                    android:paddingLeft=\"@dimen/_32sdp\">\r\n                </TextView>\r\n\r\n            </LinearLayout>\r\n\r\n            <View\r\n                android:layout_width=\"@dimen/_1sdp\"\r\n                android:layout_height=\"@dimen/_50sdp\"\r\n                android:background=\"#808080\"\r\n                android:layout_marginLeft=\"@dimen/_30sdp\"/>\r\n\r\n            <LinearLayout\r\n                android:layout_width=\"wrap_content\"\r\n                android:layout_height=\"wrap_content\"\r\n                android:orientation=\"vertical\">\r\n\r\n                <TextView\r\n                    android:id=\"@+id/found_no\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:text=\"0\"\r\n                    android:textColor=\"@color/black\"\r\n                    android:textStyle=\"bold\"\r\n                    android:textSize=\"@dimen/_20ssp\"\r\n                    android:paddingLeft=\"@dimen/_45sdp\">\r\n                </TextView>\r\n                <TextView\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:text=\"Found\"\r\n                    android:textSize=\"@dimen/_14ssp\"\r\n                    android:paddingLeft=\"@dimen/_30sdp\">\r\n                </TextView>\r\n\r\n            </LinearLayout>\r\n\r\n\r\n        </LinearLayout>\r\n\r\n        <TextView\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:text=\"Account Info\"\r\n            android:textSize=\"@dimen/_20ssp\"\r\n            android:textColor=\"@color/black\"\r\n            android:textStyle=\"bold\"\r\n            android:paddingTop=\"@dimen/_10sdp\"\r\n            android:paddingLeft=\"@dimen/_15sdp\">\r\n        </TextView>\r\n\r\n        <LinearLayout\r\n            android:layout_width=\"match_parent\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\"\r\n            android:layout_marginTop=\"@dimen/_10sdp\">\r\n            <LinearLayout\r\n                android:orientation=\"horizontal\"\r\n                android:paddingLeft=\"@dimen/_17sdp\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\">\r\n                <ImageView\r\n                    android:layout_width=\"@dimen/_25sdp\"\r\n                    android:layout_height=\"@dimen/_25sdp\"\r\n                    android:src=\"@drawable/ic_baseline_person_24\"\r\n                    app:tint=\"#FA5F2F\" />\r\n                <TextView\r\n                    android:id=\"@+id/username_p\"\r\n                    android:textStyle=\"bold\"\r\n                    android:layout_gravity=\"center_vertical\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:paddingLeft=\"@dimen/_8sdp\"\r\n                    android:text=\"@string/userName\"/>\r\n            </LinearLayout>\r\n\r\n            <LinearLayout\r\n                android:layout_marginTop=\"@dimen/_15sdp\"\r\n                android:orientation=\"horizontal\"\r\n                android:paddingLeft=\"@dimen/_17sdp\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\">\r\n                <ImageView\r\n                    android:layout_width=\"@dimen/_25sdp\"\r\n                    android:layout_height=\"@dimen/_25sdp\"\r\n                    android:src=\"@drawable/ic_baseline_email_24\"\r\n                    app:tint=\"#FA5F2F\" />\r\n                <TextView\r\n                    android:id=\"@+id/e_mail\"\r\n                    android:inputType=\"textEmailAddress\"\r\n                    android:textStyle=\"bold\"\r\n                    android:layout_gravity=\"center_vertical\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:paddingLeft=\"@dimen/_8sdp\"\r\n                    android:text=\"goodpoint@sci.asu.edu.eg\"/>\r\n            </LinearLayout>\r\n            <LinearLayout\r\n                android:layout_marginTop=\"@dimen/_15sdp\"\r\n                android:orientation=\"horizontal\"\r\n                android:paddingLeft=\"@dimen/_17sdp\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\">\r\n                <ImageView\r\n                    android:layout_width=\"@dimen/_25sdp\"\r\n                    android:layout_height=\"@dimen/_25sdp\"\r\n                    android:src=\"@drawable/ic_baseline_phone_android_24\"\r\n                    app:tint=\"#FA5F2F\"/>\r\n                <TextView\r\n                    android:id=\"@+id/phone_p\"\r\n                    android:textStyle=\"bold\"\r\n                    android:layout_gravity=\"center_vertical\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:paddingLeft=\"@dimen/_8sdp\"\r\n                    android:text=\"+01271177281\"/>\r\n            </LinearLayout>\r\n            <LinearLayout\r\n                android:layout_marginTop=\"@dimen/_15sdp\"\r\n                android:orientation=\"horizontal\"\r\n                android:paddingLeft=\"@dimen/_17sdp\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\">\r\n                <ImageView\r\n                    android:layout_width=\"@dimen/_25sdp\"\r\n                    android:layout_height=\"@dimen/_25sdp\"\r\n                    android:src=\"@drawable/ic_baseline_room_24\"\r\n                    app:tint=\"#FA5F2F\"/>\r\n                <TextView\r\n                    android:id=\"@+id/city_p\"\r\n                    android:textStyle=\"bold\"\r\n                    android:layout_gravity=\"center_vertical\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:paddingLeft=\"@dimen/_8sdp\"\r\n                    android:text=\"Cairo\"/>\r\n            </LinearLayout>\r\n\r\n            <LinearLayout\r\n                android:layout_marginTop=\"@dimen/_15sdp\"\r\n                android:orientation=\"horizontal\"\r\n                android:paddingLeft=\"@dimen/_17sdp\"\r\n                android:layout_width=\"match_parent\"\r\n                android:layout_height=\"wrap_content\">\r\n                <ImageView\r\n                    android:layout_width=\"@dimen/_25sdp\"\r\n                    android:layout_height=\"@dimen/_25sdp\"\r\n                    android:src=\"@drawable/ic_baseline_date_range_24\"\r\n                    app:tint=\"#FA5F2F\"/>\r\n                <TextView\r\n                    android:id=\"@+id/birth_date\"\r\n                    android:textStyle=\"bold\"\r\n                    android:layout_gravity=\"center_vertical\"\r\n                    android:layout_width=\"wrap_content\"\r\n                    android:layout_height=\"wrap_content\"\r\n                    android:paddingLeft=\"@dimen/_8sdp\"\r\n                    android:text=\"26/4/1999\"/>\r\n            </LinearLayout>\r\n        </LinearLayout>\r\n\r\n\r\n    </LinearLayout>\r\n</ScrollView>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_profile.xml	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ app/src/main/res/layout/fragment_profile.xml	(date 1621855100318)
+@@ -22,8 +22,8 @@
+ 
+         <de.hdodenhof.circleimageview.CircleImageView
+             android:id="@+id/profile_pic"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
++            android:layout_width="@dimen/_100sdp"
++            android:layout_height="@dimen/_100sdp"
+             android:background="@drawable/ic_prof_pic"
+             android:layout_gravity="center" />
+ 
+Index: app/src/main/java/com/helloworld/goodpoint/ui/lostFoundObject/FoundObjectActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.helloworld.goodpoint.ui.lostFoundObject;\r\n\r\nimport android.Manifest;\r\nimport android.annotation.SuppressLint;\r\nimport android.app.AlertDialog;\r\nimport android.app.DatePickerDialog;\r\nimport android.app.Fragment;\r\nimport android.app.FragmentManager;\r\nimport android.app.FragmentTransaction;\r\nimport android.content.Context;\r\nimport android.content.Intent;\r\nimport android.content.pm.PackageManager;\r\nimport android.database.Cursor;\r\nimport android.graphics.Bitmap;\r\nimport android.graphics.Color;\r\nimport android.graphics.drawable.ColorDrawable;\r\nimport android.location.Address;\r\nimport android.location.Geocoder;\r\nimport android.location.Location;\r\nimport android.location.LocationManager;\r\nimport android.net.ConnectivityManager;\r\nimport android.net.NetworkInfo;\r\nimport android.net.Uri;\r\nimport android.net.wifi.WifiManager;\r\nimport android.os.AsyncTask;\r\nimport android.os.Bundle;\r\nimport android.os.Looper;\r\nimport android.provider.MediaStore;\r\nimport android.provider.Settings;\r\nimport android.util.Log;\r\nimport android.util.SparseArray;\r\nimport android.view.MenuItem;\r\nimport android.view.View;\r\nimport android.widget.AutoCompleteTextView;\r\nimport android.widget.Button;\r\nimport android.widget.DatePicker;\r\nimport android.widget.EditText;\r\nimport android.widget.ProgressBar;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport androidx.annotation.NonNull;\r\nimport androidx.annotation.Nullable;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.appcompat.widget.PopupMenu;\r\nimport androidx.core.app.ActivityCompat;\r\nimport androidx.loader.content.CursorLoader;\r\n\r\nimport com.google.android.gms.common.GooglePlayServicesNotAvailableException;\r\nimport com.google.android.gms.common.GooglePlayServicesRepairableException;\r\nimport com.google.android.gms.location.FusedLocationProviderClient;\r\nimport com.google.android.gms.location.LocationCallback;\r\nimport com.google.android.gms.location.LocationRequest;\r\nimport com.google.android.gms.location.LocationResult;\r\nimport com.google.android.gms.location.LocationServices;\r\nimport com.google.android.gms.location.places.Place;\r\nimport com.google.android.gms.location.places.ui.PlacePicker;\r\nimport com.google.android.gms.tasks.OnCompleteListener;\r\nimport com.google.android.gms.tasks.Task;\r\nimport com.google.android.gms.vision.Frame;\r\nimport com.google.android.gms.vision.face.Face;\r\nimport com.google.android.gms.vision.face.FaceDetector;\r\nimport com.google.gson.JsonObject;\r\nimport com.helloworld.goodpoint.R;\r\nimport com.helloworld.goodpoint.pojo.FoundItem;\r\nimport com.helloworld.goodpoint.pojo.FoundPerson;\r\nimport com.helloworld.goodpoint.pojo.LostItem;\r\nimport com.helloworld.goodpoint.pojo.LostPerson;\r\nimport com.helloworld.goodpoint.pojo.User;\r\nimport com.helloworld.goodpoint.retrofit.ApiClient;\r\nimport com.helloworld.goodpoint.retrofit.ApiInterface;\r\nimport com.helloworld.goodpoint.ui.Alert;\r\nimport com.helloworld.goodpoint.ui.GlobalVar;\r\nimport com.helloworld.goodpoint.ui.PrefManager;\r\nimport com.helloworld.goodpoint.ui.prepareList;\r\nimport com.shashank.sony.fancytoastlib.FancyToast;\r\n\r\nimport org.json.JSONException;\r\nimport org.json.JSONObject;\r\n\r\nimport java.io.ByteArrayOutputStream;\r\nimport java.io.File;\r\nimport java.io.IOException;\r\nimport java.util.ArrayList;\r\nimport java.util.Calendar;\r\nimport java.util.List;\r\nimport java.util.Locale;\r\n\r\nimport okhttp3.MediaType;\r\nimport okhttp3.MultipartBody;\r\nimport okhttp3.RequestBody;\r\nimport retrofit2.Call;\r\nimport retrofit2.Callback;\r\nimport retrofit2.Response;\r\n\r\n\r\npublic class FoundObjectActivity extends AppCompatActivity implements View.OnClickListener, objectDataType {\r\n    private TextView DateFound;\r\n    private EditText Location;\r\n    private DatePickerDialog.OnDateSetListener DateSet;\r\n    private int year, month, Day;\r\n    private Button Person;\r\n    private Button Object;\r\n    private Button MatchFound;\r\n    private prepareList List;\r\n    private List<String> listColor;\r\n    private Fragment PersonF, ObjectF;\r\n    private String location, City;\r\n    private String ObjectColor, Serial, brand, textArea_information, Type;\r\n    private String PName;\r\n    private ProgressBar progressbar;\r\n    private WifiManager wifiManager;\r\n    private final static int PLACE_PICKER_REQUEST = 999;\r\n    private List<Bitmap> Person_Images;\r\n    double Latitude;\r\n    double Longitude;\r\n    private FaceDetector faceDetector;\r\n    FusedLocationProviderClient fusedLocationProviderClient;\r\n    private boolean flagPerson, flagObject;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_found_object);\r\n        Calendar cal = Calendar.getInstance();//To get today's date\r\n        inti();\r\n        if (savedInstanceState != null) {\r\n            year = savedInstanceState.getInt(\"year\");\r\n            month = savedInstanceState.getInt(\"month\");\r\n            Day = savedInstanceState.getInt(\"Day\");\r\n            flagPerson = savedInstanceState.getBoolean(\"flagPerson\");\r\n            flagObject = savedInstanceState.getBoolean(\"flagObject\");\r\n            if (flagPerson == true) {\r\n                Person.setTextColor(0xFFF38E3A);\r\n                Object.setTextColor(Color.BLACK);\r\n            } else if (flagObject == true) {\r\n                Object.setTextColor(0xFFF38E3A);\r\n                Person.setTextColor(Color.BLACK);\r\n            }\r\n        } else {\r\n            year = cal.get(Calendar.YEAR);\r\n            month = cal.get(Calendar.MONTH);\r\n            Day = cal.get(Calendar.DAY_OF_MONTH);\r\n        }\r\n        //String todayDate = year + \"/\" + (month + 1) + \"/\" + Day;\r\n        String todayDate = year + \"-\" + (month + 1) + \"-\" + Day;\r\n        DateFound.setText(todayDate);\r\n\r\n        DateSet = new DatePickerDialog.OnDateSetListener() {\r\n            @Override\r\n            public void onDateSet(DatePicker datePicker, int y, int m, int d) {\r\n                m++;\r\n                if (y > year || (m - 1 > month && y >= year) || (d > Day && m - 1 >= month && y >= year)) {\r\n                    FancyToast.makeText(FoundObjectActivity.this, \"Invalid date\", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();\r\n                    //String todayDate = year + \"/\" + (month + 1) + \"/\" + Day;\r\n                    String todayDate = year + \"-\" + (month + 1) + \"-\" + Day;\r\n                    DateFound.setText(todayDate);\r\n                } else {\r\n                    year = y;\r\n                    month = m - 1;\r\n                    Day = d;\r\n                    //String Date = y + \"/\" + m + \"/\" + d;\r\n                    String Date = y + \"-\" + m + \"-\" + d;\r\n                    DateFound.setText(Date);\r\n                }\r\n            }\r\n        };\r\n    }\r\n\r\n    @Override\r\n    protected void onStart() {\r\n        super.onStart();\r\n        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(FoundObjectActivity.this);\r\n        if (ActivityCompat.checkSelfPermission(FoundObjectActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED\r\n                && ActivityCompat.checkSelfPermission(FoundObjectActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {\r\n            ActivityCompat.requestPermissions(FoundObjectActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 12);\r\n        } else {\r\n            getCurrentLocation();\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public void onClick(View view) {\r\n        FragmentManager FM = getFragmentManager();\r\n        FragmentTransaction FT = FM.beginTransaction();\r\n        switch (view.getId()) {\r\n            case R.id.DateFound:\r\n                DatePickerDialog dialog = new DatePickerDialog(\r\n                        FoundObjectActivity.this,\r\n                        android.R.style.Theme_Holo_Light_Dialog_MinWidth,\r\n                        DateSet,\r\n                        year, month, Day\r\n                );\r\n                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));\r\n                dialog.show();\r\n                break;\r\n            case R.id.FoundLocatin:\r\n                PopupMenu popupMenu = new PopupMenu(this, view);\r\n                popupMenu.getMenuInflater().inflate(R.menu.choose_location, popupMenu.getMenu());\r\n                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {\r\n                    @Override\r\n                    public boolean onMenuItemClick(MenuItem item) {\r\n                        if (ActivityCompat.checkSelfPermission(FoundObjectActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED\r\n                                && ActivityCompat.checkSelfPermission(FoundObjectActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {\r\n                            ActivityCompat.requestPermissions(FoundObjectActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 12);\r\n                        } else {\r\n                            switch (item.getItemId()) {\r\n                                case R.id.TakeCurrLocation:\r\n                                    isInternetAvailable Available = new isInternetAvailable();\r\n                                    Available.execute();\r\n                                    CurrentLocation Locate = new CurrentLocation();\r\n                                    Locate.execute();\r\n                                    break;\r\n                                case R.id.DeteLocation:\r\n                                    boolean flag = false;\r\n                                    wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);\r\n                                    if (wifiManager.isWifiEnabled())\r\n                                        wifiManager.setWifiEnabled(false);\r\n                                    else {\r\n                                        flag = true;\r\n                                    }\r\n                                    PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();\r\n                                    try {\r\n                                        Intent intent = builder.build(FoundObjectActivity.this);\r\n                                        startActivityForResult(intent, PLACE_PICKER_REQUEST);\r\n                                        if (!flag) wifiManager.setWifiEnabled(true);\r\n                                    } catch (GooglePlayServicesRepairableException | GooglePlayServicesNotAvailableException e) {\r\n                                        e.printStackTrace();\r\n                                    } catch (Exception e) {\r\n                                        e.printStackTrace();\r\n                                    }\r\n                                    break;\r\n                            }\r\n                        }\r\n                        return true;\r\n                    }\r\n                });\r\n                popupMenu.show();\r\n                break;\r\n            case R.id.PersonFound:\r\n                flagPerson = true;\r\n                flagObject = false;\r\n                FT.replace(R.id.FragmentFoundID, PersonF, null);\r\n                Person.setTextColor(0xFFF38E3A);\r\n                Object.setTextColor(Color.BLACK);\r\n\r\n                FT.commit();\r\n                break;\r\n            case R.id.ObjectFound:\r\n                flagObject = true;\r\n                flagPerson = false;\r\n                FT.replace(R.id.FragmentFoundID, ObjectF, null);\r\n                Object.setTextColor(0xFFF38E3A);\r\n                Person.setTextColor(Color.BLACK);\r\n\r\n                FT.commit();\r\n                break;\r\n            case R.id.MatchFound:\r\n                GlobalVar.allFaces.clear();\r\n                if (!flagObject && !flagPerson) {\r\n                    FancyToast.makeText(this, \"Specify the type of the missing object\", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();\r\n                } else if (flagObject && CheckMatchObject()) {\r\n                    FoundItems();\r\n                    FancyToast.makeText(this, \"The data has been saved successfully\", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, false).show();\r\n                    finish();\r\n                } else if (flagPerson && CheckMatchPerson()) {\r\n                    faceDetector = new FaceDetector.Builder(this)\r\n                            .setTrackingEnabled(false)\r\n                            .setLandmarkType(FaceDetector.ALL_LANDMARKS)\r\n                            .setMode(FaceDetector.FAST_MODE).build();\r\n                    if (!faceDetector.isOperational()) {\r\n                        Toast.makeText(this, \"Face Detection can't be setup\", Toast.LENGTH_SHORT).show();\r\n                    }\r\n                    checkFaces N = new checkFaces(this);\r\n                    N.execute();\r\n                }\r\n                break;\r\n        }\r\n    }\r\n\r\n    private boolean CheckMatchPerson() {\r\n        EditText PersonName = PersonF.getView().findViewById(R.id.PersonName);\r\n        PName = PersonName.getText().toString();\r\n        location = Location.getText().toString();\r\n        if (location.isEmpty()) {\r\n            FancyToast.makeText(this, \"Specify where you found this object\", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();\r\n            return false;\r\n        } else if (Person_Images.size() == 0) {\r\n            FancyToast.makeText(this, \"You must put at least one picture!\", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();\r\n            return false;\r\n        }\r\n        return true;\r\n    }\r\n\r\n    class checkFaces extends AsyncTask<Void, Void, Void> {\r\n        AlertDialog.Builder builder;\r\n        AlertDialog dialog;\r\n        Context context;\r\n\r\n        private checkFaces(Context context) {\r\n            this.context = context.getApplicationContext();\r\n            builder = new AlertDialog.Builder(FoundObjectActivity.this);\r\n        }\r\n\r\n        @Override\r\n        protected void onPreExecute() {\r\n            super.onPreExecute();\r\n            builder.setCancelable(false);\r\n            View view = getLayoutInflater().inflate(R.layout.progress_bar_alert, null);\r\n            builder.setView(view);\r\n            dialog = builder.create();\r\n            dialog.show();\r\n        }\r\n\r\n        @Override\r\n        protected void onPostExecute(Void a) {\r\n            super.onPostExecute(a);\r\n            Log.e(\"img\", \"onPostExecute: \" + GlobalVar.ImgThatHaveMoreThanOneFace.size() + \"  \" + GlobalVar.FinialFacesThatWillGoToDataBase.size());\r\n            if (GlobalVar.allFaces.size() > 0) {\r\n                startActivity(new Intent(FoundObjectActivity.this, Alert.class));\r\n                finish();\r\n\r\n            } else {\r\n                FancyToast.makeText(FoundObjectActivity.this, \"The data has been saved successfully\", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, false).show();\r\n                finish();\r\n            }\r\n            dialog.dismiss();\r\n            FoundPerson();\r\n\r\n        }\r\n\r\n        @Override\r\n        protected Void doInBackground(Void... voids) {\r\n            GlobalVar.ImgThatHaveMoreThanOneFace.clear();\r\n            GlobalVar.FinialFacesThatWillGoToDataBase.clear();\r\n            GlobalVar.allFaces.clear();\r\n            boolean flag = false;\r\n            for (int i = 0; i < Person_Images.size(); i++) {\r\n                Bitmap My = Person_Images.get(i);\r\n                Bitmap faceBitmap;\r\n                List<Bitmap> faces = new ArrayList<>();//In one Img;\r\n                Frame frame = new Frame.Builder().setBitmap(My).build();\r\n                SparseArray<Face> sparseArray = faceDetector.detect(frame);\r\n                for (int j = 0; j < sparseArray.size(); j++) {\r\n                    flag = false;\r\n                    Face face = sparseArray.valueAt(j);\r\n                    if (((int) face.getPosition().y + (int) face.getHeight()) > My.getHeight()) {\r\n                        int H = My.getHeight() - (int) face.getPosition().y;\r\n                        faceBitmap = Bitmap.createBitmap(My, (int) face.getPosition().x, (int) face.getPosition().y, (int) face.getWidth(), H);\r\n                    } else if (((int) face.getPosition().x + (int) face.getWidth()) > My.getWidth()) {\r\n                        int W = My.getWidth() - (int) face.getPosition().x;\r\n                        faceBitmap = Bitmap.createBitmap(My, (int) face.getPosition().x, (int) face.getPosition().y, W, (int) face.getHeight());\r\n                    } else if ((((int) face.getPosition().x + (int) face.getWidth()) > My.getWidth()) && (((int) face.getPosition().y + (int) face.getHeight()) > My.getHeight())) {\r\n                        int H = My.getHeight() - (int) face.getPosition().y;\r\n                        int W = My.getWidth() - (int) face.getPosition().x;\r\n                        faceBitmap = Bitmap.createBitmap(My, (int) face.getPosition().x, (int) face.getPosition().y, W, H);\r\n                    } else {\r\n                        faceBitmap = Bitmap.createBitmap(My, (int) face.getPosition().x, (int) face.getPosition().y, (int) face.getWidth(), (int) face.getHeight());\r\n\r\n                    }\r\n                    if (sparseArray.size() == 1) {\r\n                        GlobalVar.FinialFacesThatWillGoToDataBase.add(faceBitmap);\r\n                        flag = true;\r\n                    } else {\r\n                        faces.add(faceBitmap);\r\n                    }\r\n                }\r\n                if (!flag) {\r\n                    GlobalVar.ImgThatHaveMoreThanOneFace.add(My);\r\n                    GlobalVar.allFaces.add(faces);\r\n                }\r\n\r\n            }\r\n            return null;\r\n        }\r\n    }\r\n\r\n    private boolean CheckMatchObject() {\r\n        location = Location.getText().toString();\r\n        AutoCompleteTextView V = ObjectF.getView().findViewById(R.id.ColorOfObject);\r\n        EditText serialObject = ObjectF.getView().findViewById(R.id.Serial);\r\n        EditText brandObject = ObjectF.getView().findViewById(R.id.brand);\r\n        EditText textArea_informationObject = ObjectF.getView().findViewById(R.id.textArea_information);\r\n        EditText TypeObject;\r\n\r\n        ObjectColor = V.getText().toString();\r\n        Serial = serialObject.getText().toString();\r\n        brand = brandObject.getText().toString();\r\n        textArea_information = textArea_informationObject.getText().toString();\r\n        if (location.isEmpty()) {\r\n            FancyToast.makeText(this, \"Specify where you found this object\", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();\r\n            return false;\r\n        } else if (Type.equals(\"Type\")) {\r\n            FancyToast.makeText(this, \"You must Choose the Type!\", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();\r\n            return false;\r\n        } else if (Type.equals(\"Others\")) {\r\n            TypeObject = ObjectF.getView().findViewById(R.id.Other);\r\n            if (TypeObject.getText().toString().isEmpty()) {\r\n                TypeObject.setError(\"Field can't be empty\");\r\n                return false;\r\n            } else {\r\n                Type = TypeObject.getText().toString();\r\n            }\r\n        } else if (brand.isEmpty()) {\r\n            brandObject.setError(\"Field can't be empty\");\r\n            return false;\r\n        } else if (ObjectColor.isEmpty()) {\r\n            V.setError(\"Field can't be empty\");\r\n            return false;\r\n        } else if (!listColor.contains(ObjectColor.trim())) {\r\n            V.setError(\"Color isn't known!\");\r\n            return false;\r\n        } else if (textArea_information.isEmpty()) {\r\n            textArea_informationObject.setError(\"Field can't be empty\");\r\n            return false;\r\n        }\r\n        return true;\r\n    }\r\n\r\n    @Override\r\n    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {\r\n        super.onActivityResult(requestCode, resultCode, data);\r\n        if (requestCode == PLACE_PICKER_REQUEST && resultCode == RESULT_OK) {\r\n            Place place = PlacePicker.getPlace(data, this);\r\n            StringBuilder stringBuilder = new StringBuilder();\r\n            Latitude = place.getLatLng().latitude;\r\n            Longitude = place.getLatLng().longitude;\r\n            isInternetAvailable Available = new isInternetAvailable();\r\n            Available.execute();\r\n            CurrentLocation Locate = new CurrentLocation();\r\n            Locate.execute();\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {\r\n        if (requestCode == 12 && (grantResults.length > 0) &&\r\n                grantResults[0] == PackageManager.PERMISSION_GRANTED) {\r\n            getCurrentLocation();\r\n        } else if (requestCode == 12 && (grantResults.length > 0) &&\r\n                grantResults[0] == PackageManager.PERMISSION_DENIED) {\r\n\r\n            FancyToast.makeText(this, \"Permission denied\", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();\r\n        } else if (requestCode == 11 && (grantResults.length > 0) &&\r\n                grantResults[0] == PackageManager.PERMISSION_DENIED) {\r\n            FancyToast.makeText(this, \"Permission denied\", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();\r\n        }\r\n\r\n    }\r\n\r\n    @SuppressLint(\"MissingPermission\")\r\n    private void getCurrentLocation() {\r\n        LocationManager locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);\r\n\r\n        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)\r\n                || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)\r\n        ) {\r\n            fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {\r\n                @SuppressLint(\"MissingPermission\")\r\n                @Override\r\n                public void onComplete(@NonNull Task<Location> task) {\r\n                    Location location = task.getResult();\r\n                    if (location != null) {\r\n                        Longitude = location.getLongitude();\r\n                        Latitude = location.getLatitude();\r\n                    } else {\r\n                        @SuppressLint(\"RestrictedApi\") LocationRequest locationRequest = new LocationRequest()\r\n                                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)\r\n                                .setInterval(10000)\r\n                                .setFastestInterval(1000)\r\n                                .setNumUpdates(1);\r\n                        LocationCallback locationCallback = new LocationCallback() {\r\n                            @Override\r\n                            public void onLocationResult(LocationResult locationResult) {\r\n                                Location location1 = locationResult.getLastLocation();\r\n                                Longitude = location1.getLongitude();\r\n                                Latitude = location1.getLatitude();\r\n                            }\r\n                        };\r\n                        fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());\r\n\r\n                    }\r\n                }\r\n            });\r\n        } else {\r\n            //when location servies is not enabled\r\n            //open location setting\r\n            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));\r\n        }\r\n    }\r\n\r\n    class CurrentLocation extends AsyncTask<Void, Void, String> {\r\n\r\n        @Override\r\n        protected void onPreExecute() {\r\n            super.onPreExecute();\r\n            progressbar.setVisibility(View.VISIBLE);\r\n        }\r\n\r\n        @Override\r\n        protected void onPostExecute(String Locate) {\r\n            super.onPostExecute(Locate);\r\n            if (Locate.isEmpty())\r\n                FancyToast.makeText(FoundObjectActivity.this, \"An error has occurred , please try again\", FancyToast.LENGTH_LONG, FancyToast.WARNING, false).show();\r\n            Location.setText(Locate);\r\n            progressbar.setVisibility(View.GONE);\r\n        }\r\n\r\n        @Override\r\n        protected String doInBackground(Void... voids) {\r\n            Geocoder geocoder = new Geocoder(FoundObjectActivity.this, new Locale(\"en\"));\r\n            String Locate = \"\";\r\n            try {\r\n                List<Address> addresses = geocoder.getFromLocation(Latitude, Longitude, 1);\r\n                String Country = addresses.get(0).getCountryName();\r\n                String CityG = addresses.get(0).getAdminArea();\r\n                City = CityG.substring(0, CityG.lastIndexOf(' '));\r\n                String area = addresses.get(0).getLocality();\r\n                Locate = area + \",\" + CityG + \",\" + Country + \".\";\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n            }\r\n            return Locate;\r\n        }\r\n\r\n    }\r\n\r\n    public boolean isNetworkAvailable(Context context) {\r\n        ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);\r\n        NetworkInfo nInfo = cm.getActiveNetworkInfo();\r\n        boolean connected = nInfo != null && nInfo.isAvailable() && nInfo.isConnected();\r\n        return connected;\r\n    }\r\n\r\n    class isInternetAvailable extends AsyncTask<Void, Void, Boolean> {\r\n\r\n        @Override\r\n        protected void onPreExecute() {\r\n            super.onPreExecute();\r\n            progressbar.setVisibility(View.VISIBLE);\r\n        }\r\n\r\n        @Override\r\n        protected void onPostExecute(Boolean aBoolean) {\r\n            super.onPostExecute(aBoolean);\r\n            progressbar.setVisibility(View.GONE);\r\n            if (!aBoolean)\r\n                FancyToast.makeText(FoundObjectActivity.this, \"No Internet Connection\", FancyToast.LENGTH_LONG, FancyToast.WARNING, false).show();\r\n        }\r\n\r\n        @Override\r\n        protected Boolean doInBackground(Void... voids) {\r\n            Boolean flag;\r\n            try {\r\n                String command = \"ping -c 1 google.com\";\r\n                flag = (Runtime.getRuntime().exec(command).waitFor() == 0);\r\n            } catch (Exception e) {\r\n                flag = false;\r\n            }\r\n            return flag;\r\n        }\r\n    }\r\n\r\n    protected void inti() {\r\n\r\n        DateFound = findViewById(R.id.DateFound);\r\n        progressbar = findViewById(R.id.ProgressBar);\r\n        Button foundLocatin = findViewById(R.id.FoundLocatin);\r\n        Person = findViewById(R.id.PersonFound);\r\n        Object = findViewById(R.id.ObjectFound);\r\n        MatchFound = findViewById(R.id.MatchFound);\r\n        Location = findViewById(R.id.Location);\r\n        DateFound.setOnClickListener(this);\r\n        foundLocatin.setOnClickListener(this);\r\n        Person.setOnClickListener(this);\r\n        Object.setOnClickListener(this);\r\n        MatchFound.setOnClickListener(this);\r\n        PersonF = new PersonFragment();\r\n        ObjectF = new ObjectFragment();\r\n        List = new prepareList();\r\n        listColor = List.prepareListColor(this);\r\n\r\n    }\r\n\r\n    @Override\r\n    public void getType(String T) {\r\n        Type = T;\r\n    }\r\n\r\n    @Override\r\n    public void getImageCheck(Boolean check) {\r\n    }\r\n\r\n    @Override\r\n    public void getBitmap_Image(Bitmap Bitmap_Image) {\r\n    }\r\n\r\n    @Override\r\n    public void getBitmap_ImagePersonImages(List<Bitmap> PImages) {\r\n        Person_Images = PImages;\r\n        Log.e(\"img\", \"getBitmap_ImagePersonImages: Hi \" + Person_Images.size());\r\n    }\r\n\r\n    @Override\r\n    public void onSaveInstanceState(@NonNull Bundle outState) {\r\n        super.onSaveInstanceState(outState);\r\n\r\n        outState.putInt(\"year\", year);\r\n        outState.putInt(\"month\", month);\r\n        outState.putInt(\"Day\", Day);\r\n        outState.putBoolean(\"flagPerson\", flagPerson);\r\n        outState.putBoolean(\"flagObject\", flagObject);\r\n    }\r\n\r\n/*\r\n    public Uri getImageUri(Bitmap bitmap_Image) {\r\n        ByteArrayOutputStream bytes = new ByteArrayOutputStream();\r\n        bitmap_Image.compress(Bitmap.CompressFormat.JPEG, 100, bytes);\r\n        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap_Image, \"LostItem\", null);\r\n        return Uri.parse(path);\r\n    }\r\n\r\n    private String getRealPathFromURI(Uri imageUri) {\r\n        String[] proj = {MediaStore.Images.Media.DATA};\r\n        CursorLoader loader = new CursorLoader(this, imageUri, proj, null, null, null);\r\n        Cursor cursor = loader.loadInBackground();\r\n        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);\r\n        cursor.moveToFirst();\r\n        String result = cursor.getString(column_index);\r\n        cursor.close();\r\n        return result;\r\n    }\r\n*/\r\n\r\n    public void FoundItems() {\r\n\r\n        String Datee = DateFound.getText().toString().trim();\r\n        ApiInterface apiInterface = ApiClient.getApiClient(new PrefManager(getApplicationContext()).getNGROKLink()).create(ApiInterface.class);\r\n\r\n        Call<JsonObject> call = apiInterface.storeFoundObj(User.getUser().getId(), Datee, City, Longitude , Latitude);\r\n        call.enqueue(new Callback<JsonObject>() {\r\n            @Override\r\n            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {\r\n                if (response.isSuccessful()) {\r\n\r\n                    try {\r\n                        JSONObject jsonObject = new JSONObject(response.body().toString());\r\n                        String id = jsonObject.getString(\"id\");\r\n                        Toast.makeText(FoundObjectActivity.this, \"Object is posted.\", Toast.LENGTH_SHORT).show();\r\n\r\n\r\n                        Call<FoundItem> call2 = apiInterface.storeFoundItem(id, Type, Serial, brand, ObjectColor, textArea_information);\r\n                        call2.enqueue(new Callback<FoundItem>() {\r\n                            @Override\r\n                            public void onResponse(Call<FoundItem> call, Response<FoundItem> response) {\r\n                                if (response.isSuccessful()) {\r\n                                    Toast.makeText(FoundObjectActivity.this, \"Item is posted.\", Toast.LENGTH_SHORT).show();\r\n                                } else\r\n                                    Toast.makeText(FoundObjectActivity.this, \"The item is not posted.\", Toast.LENGTH_SHORT).show();\r\n                            }\r\n\r\n                            @Override\r\n                            public void onFailure(Call<FoundItem> call, Throwable t) {\r\n                                Toast.makeText(FoundObjectActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();\r\n                            }\r\n                        });\r\n\r\n\r\n                    } catch (JSONException e) {\r\n                        e.printStackTrace();\r\n                    }\r\n\r\n                } else\r\n                        Toast.makeText(FoundObjectActivity.this, \"Objec is not posted.\", Toast.LENGTH_SHORT).show();\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(Call<JsonObject> call, Throwable t) {\r\n                Toast.makeText(FoundObjectActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();\r\n            }\r\n        });\r\n\r\n    }\r\n\r\n    public Uri getImageUri(Bitmap bitmap_Image) {\r\n        ByteArrayOutputStream bytes = new ByteArrayOutputStream();\r\n        bitmap_Image.compress(Bitmap.CompressFormat.JPEG, 100, bytes);\r\n        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap_Image, \"LostItem\", null);\r\n        return Uri.parse(path);\r\n    }\r\n\r\n    private String getRealPathFromURI(Uri imageUri) {\r\n        String[] proj = {MediaStore.Images.Media.DATA};\r\n        CursorLoader loader = new CursorLoader(this, imageUri, proj, null, null, null);\r\n        Cursor cursor = loader.loadInBackground();\r\n        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);\r\n        cursor.moveToFirst();\r\n        String result = cursor.getString(column_index);\r\n        cursor.close();\r\n        return result;\r\n    }\r\n\r\n    public void FoundPerson()\r\n    {\r\n\r\n        String Datee = DateFound.getText().toString().trim();\r\n        ApiInterface apiInterface = ApiClient.getApiClient(new PrefManager(getApplicationContext()).getNGROKLink()).create(ApiInterface.class);\r\n\r\n        Uri imageURI = getImageUri(Person_Images.get(0));\r\n        File file = new File(getRealPathFromURI(imageURI));\r\n        RequestBody requestBody = RequestBody.create(MediaType.parse(\"multipart/form-data\"), file);\r\n        MultipartBody.Part Pimage = MultipartBody.Part.createFormData(\"image\", file.getName(), requestBody);\r\n\r\n        Call<JsonObject> call = apiInterface.storeFoundPerson(User.getUser().getId(), Datee, City, Longitude , Latitude, PName, Pimage);\r\n        call.enqueue(new Callback<JsonObject>() {\r\n            @Override\r\n            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {\r\n                if(response.isSuccessful()) {\r\n                    Toast.makeText(FoundObjectActivity.this, \"The object posted.\", Toast.LENGTH_SHORT).show();\r\n                }else\r\n                    Toast.makeText(FoundObjectActivity.this, \"The object is not posted.\", Toast.LENGTH_SHORT).show();\r\n\r\n            }\r\n\r\n            @Override\r\n            public void onFailure(Call<JsonObject> call, Throwable t) {\r\n                Toast.makeText(FoundObjectActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();\r\n            }\r\n        });\r\n\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/helloworld/goodpoint/ui/lostFoundObject/FoundObjectActivity.java	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ app/src/main/java/com/helloworld/goodpoint/ui/lostFoundObject/FoundObjectActivity.java	(date 1621852290573)
+@@ -514,7 +514,11 @@
+                 List<Address> addresses = geocoder.getFromLocation(Latitude, Longitude, 1);
+                 String Country = addresses.get(0).getCountryName();
+                 String CityG = addresses.get(0).getAdminArea();
+-                City = CityG.substring(0, CityG.lastIndexOf(' '));
++                int index = CityG.lastIndexOf(' ');
++                if(index == -1)
++                    City = CityG;
++                else
++                    City = CityG.substring(0, index);
+                 String area = addresses.get(0).getLocality();
+                 Locate = area + "," + CityG + "," + Country + ".";
+             } catch (IOException e) {
+Index: app/src/main/java/com/helloworld/goodpoint/retrofit/ApiInterface.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.helloworld.goodpoint.retrofit;\r\n\r\nimport com.google.gson.JsonObject;\r\nimport com.helloworld.goodpoint.pojo.FoundItem;\r\nimport com.helloworld.goodpoint.pojo.FoundPerson;\r\nimport com.helloworld.goodpoint.pojo.LostItem;\r\nimport com.helloworld.goodpoint.pojo.LostPerson;\r\nimport com.helloworld.goodpoint.pojo.ObjectLocation;\r\nimport com.helloworld.goodpoint.pojo.RegUser;\r\nimport com.helloworld.goodpoint.pojo.Token;\r\nimport com.helloworld.goodpoint.pojo.User;\r\nimport com.helloworld.goodpoint.pojo.UserMap;\r\n\r\nimport org.json.JSONObject;\r\n\r\nimport java.util.List;\r\n\r\nimport okhttp3.MultipartBody;\r\nimport okhttp3.RequestBody;\r\nimport okhttp3.ResponseBody;\r\nimport retrofit2.Call;\r\nimport retrofit2.http.Body;\r\nimport retrofit2.http.Field;\r\nimport retrofit2.http.FormUrlEncoded;\r\nimport retrofit2.http.GET;\r\nimport retrofit2.http.Header;\r\nimport retrofit2.http.Headers;\r\nimport retrofit2.http.Multipart;\r\nimport retrofit2.http.POST;\r\nimport retrofit2.http.Part;\r\nimport retrofit2.http.Path;\r\nimport retrofit2.http.Query;\r\n\r\npublic interface ApiInterface {\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"auth/signup/\")\r\n    Call<RegUser> storePost(@Field(\"username\") String emailInput\r\n                            , @Field(\"password\") String passwordInput, @Field(\"first_name\") String usernameInput\r\n                            , @Field(\"phone\") String pInput, @Field(\"city\") String cityInput\r\n                            , @Field(\"birthdate\") String Datee);\r\n\r\n\r\n    @Multipart\r\n    @POST(\"auth/signup/\")\r\n    Call<RegUser> storePost(@Part(\"username\") String emailInput\r\n                            , @Part(\"password\") String passwordInput, @Part(\"first_name\") String usernameInput\r\n                            , @Part(\"phone\") String pInput, @Part(\"city\") String cityInput\r\n                            , @Part(\"birthdate\") String Datee, @Part MultipartBody.Part profile_pic);\r\n\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"api/token/\")\r\n    Call<Token> getToken(@Field(\"username\") String emailInput, @Field(\"password\") String passwordInput);\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"api/token/refresh/\")\r\n    Call<Token> refresh(@Field(\"refresh\") String refresh);\r\n\r\n\r\n    @POST(\"auth/signin/\")\r\n    Call<JsonObject> getData(@Header(\"Authorization\") String token);\r\n\r\n    //----------------------------------------------------------------------------------------------\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"losts/lostobject/\")\r\n    Call<JsonObject> storeLostObj(@Field(\"user_id\") String id, @Field(\"date\") String Datee, @Field(\"city\") String cityInput);\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"losts/lostitem/\")\r\n    Call<LostItem> storeLostItem(@Field(\"id\") String obj_id, @Field(\"type\") String Type, @Field(\"serial_number\") String Serial\r\n            , @Field(\"brand\") String brand, @Field(\"color\") String ObjectColor\r\n            , @Field(\"description\") String textArea_information);\r\n\r\n    @Multipart\r\n    @POST(\"losts/lostitem/\")\r\n    Call<LostItem> storeLostItem(@Part(\"id\") String obj_id, @Part(\"type\") String Type, @Part(\"serial_number\") String Serial\r\n                             , @Part(\"brand\") String brand, @Part(\"color\") String ObjectColor\r\n                             , @Part(\"description\") String textArea_information, @Part MultipartBody.Part image);\r\n\r\n    @Multipart\r\n    @POST(\"losts/lostperson/\")\r\n    Call<JsonObject> storeLostPerson(@Part(\"date\") String Date, @Part(\"city\") String city, @Part(\"user_id\") String user_id\r\n                                   , @Part(\"name\") String name, @Part MultipartBody.Part images);\r\n\r\n\r\n    @Multipart\r\n    @POST(\"losts/lostperson_image/\")\r\n    Call<LostPerson> storeLostPersonImage(@Part(\"id\") String person_id/*, @Part MultipartBody.Part image*/);\r\n    //----------------------------------------------------------------------------------------------\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"losts/foundobject/\")\r\n    Call<JsonObject> storeFoundObj(@Field(\"user_id\") String id, @Field(\"date\") String Datee, @Field(\"city\") String cityInput\r\n                                 , @Field(\"longitude\") double longitude, @Field(\"latitude\") double latitude);\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"losts/founditem/\")\r\n    Call<FoundItem> storeFoundItem(@Field(\"id\") String obj_id, @Field(\"type\") String Type, @Field(\"serial_number\") String Serial\r\n            , @Field(\"brand\") String brand, @Field(\"color\") String ObjectColor\r\n            , @Field(\"description\") String textArea_information);\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"losts/foundperson/\")\r\n    Call<JsonObject> storeFoundPerson(@Field(\"user_id\") String id, @Field(\"date\") String Datee, @Field(\"city\") String cityInput\r\n            , @Field(\"longitude\") double longitude, @Field(\"latitude\") double latitude, @Field(\"name\") String name\r\n            , @Part MultipartBody.Part image);\r\n\r\n    @Multipart\r\n    @POST(\"losts/foundperson_image/\")\r\n    Call<FoundPerson> storeFoundPersonImage(@Part(\"id\") String person_id/*, @Part MultipartBody.Part image*/);\r\n\r\n    //----------------------------------------------------------------------------------------------\r\n\r\n    @GET(\"losts/map/\")\r\n    Call<List<ObjectLocation>> getPoint();\r\n\r\n    @GET(\"losts/founder/{id}\")\r\n    Call<UserMap> getUserMap(@Path(\"id\") int id);\r\n\r\n\r\n\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/helloworld/goodpoint/retrofit/ApiInterface.java	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ app/src/main/java/com/helloworld/goodpoint/retrofit/ApiInterface.java	(date 1621853230298)
+@@ -101,10 +101,10 @@
+             , @Field("brand") String brand, @Field("color") String ObjectColor
+             , @Field("description") String textArea_information);
+ 
+-    @FormUrlEncoded
++    @Multipart
+     @POST("losts/foundperson/")
+-    Call<JsonObject> storeFoundPerson(@Field("user_id") String id, @Field("date") String Datee, @Field("city") String cityInput
+-            , @Field("longitude") double longitude, @Field("latitude") double latitude, @Field("name") String name
++    Call<JsonObject> storeFoundPerson(@Part("user_id") String id, @Part("date") String Datee, @Part("city") String cityInput
++            , @Part("longitude") Double longitude, @Part("latitude") Double latitude, @Part("name") String name
+             , @Part MultipartBody.Part image);
+ 
+     @Multipart
+Index: app/src/main/java/com/helloworld/goodpoint/ui/HomeActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.helloworld.goodpoint.ui;\r\nimport androidx.annotation.NonNull;\r\nimport androidx.appcompat.app.ActionBarDrawerToggle;\r\nimport androidx.appcompat.app.AlertDialog;\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.appcompat.widget.Toolbar;\r\nimport androidx.core.view.GravityCompat;\r\nimport androidx.drawerlayout.widget.DrawerLayout;\r\nimport androidx.fragment.app.Fragment;\r\nimport android.content.DialogInterface;\r\nimport android.content.Intent;\r\nimport android.graphics.Bitmap;\r\nimport android.graphics.BitmapFactory;\r\nimport android.graphics.Color;\r\nimport android.graphics.PorterDuff;\r\nimport android.os.AsyncTask;\r\nimport android.os.Bundle;\r\nimport android.util.Log;\r\nimport android.view.LayoutInflater;\r\nimport android.view.Menu;\r\nimport android.view.MenuItem;\r\nimport android.view.View;\r\nimport android.widget.EditText;\r\nimport android.widget.LinearLayout;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\n\r\nimport com.google.android.material.bottomnavigation.BottomNavigationView;\r\nimport com.google.android.material.bottomsheet.BottomSheetDialog;\r\nimport com.google.android.material.floatingactionbutton.FloatingActionButton;\r\nimport com.google.android.material.navigation.NavigationView;\r\nimport com.helloworld.goodpoint.R;\r\nimport com.helloworld.goodpoint.pojo.RegUser;\r\nimport com.helloworld.goodpoint.pojo.User;\r\nimport com.helloworld.goodpoint.ui.lostFoundObject.FoundObjectActivity;\r\nimport com.helloworld.goodpoint.ui.lostFoundObject.LostObjectDetailsActivity;\r\n\r\nimport java.io.IOException;\r\nimport java.io.InputStream;\r\nimport java.net.HttpURLConnection;\r\nimport java.net.MalformedURLException;\r\nimport java.net.URL;\r\n\r\nimport de.hdodenhof.circleimageview.CircleImageView;\r\n\r\npublic class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {\r\n    DrawerLayout drawerLayout;\r\n    NavigationView navigationView;\r\n    Toolbar toolbar;\r\n    AlertDialog.Builder dialog;\r\n    BottomNavigationView bottomNavigationView;\r\n    FloatingActionButton fab;\r\n    Fragment fhome, fmatch, fprofile;\r\n    TextView namenavigator;\r\n    TextView mailnavigator;\r\n    CircleImageView imgnavigator;\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.activity_home);\r\n\r\n        init();\r\n        setToolBarAndDrawer();\r\n        setBottomNavigator();\r\n\r\n        if(savedInstanceState == null) {\r\n            //To make first fragment is home when opening the app\r\n            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fhome).commit();\r\n        }\r\n\r\n    }\r\n\r\n    private void setBottomNavigator() {\r\n        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);\r\n        fab = (FloatingActionButton) findViewById(R.id.fab);\r\n\r\n        //To Disable item under Fab\r\n        Menu menuNav=bottomNavigationView.getMenu();\r\n        MenuItem nav_item2 = menuNav.findItem(R.id.placeholder);\r\n        nav_item2.setEnabled(false);\r\n\r\n        bottomNavigationView.setBackgroundColor(0); //To hide the color of nav view\r\n        bottomNavigationView.setOnNavigationItemSelectedListener(navListner);\r\n    }\r\n\r\n    private void setToolBarAndDrawer() {\r\n        setSupportActionBar(toolbar);\r\n        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.nav_drawer_open,R.string.nav_drawer_close);\r\n        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(android.R.color.white));\r\n        drawerLayout.addDrawerListener(toggle);\r\n        toggle.syncState();\r\n        navigationView.setNavigationItemSelectedListener(this);\r\n    }\r\n\r\n    private void init() {\r\n        drawerLayout = findViewById(R.id.drawer_layout);\r\n        toolbar = findViewById(R.id.toolbar);\r\n        navigationView = findViewById(R.id.nv);\r\n        navigationView.bringToFront();\r\n        fhome = new HomeFragment();\r\n        fmatch = new MatchFragment();\r\n        fprofile = new ProfileFragment();\r\n        View view = navigationView.getHeaderView(0);\r\n        namenavigator = (TextView) view.findViewById(R.id.namenav);\r\n        mailnavigator = (TextView) view.findViewById(R.id.mailnav);\r\n        imgnavigator = view.findViewById(R.id.circuler_profile_img);\r\n        namenavigator.setText(User.getUser().getUsername());\r\n        mailnavigator.setText(User.getUser().getEmail());\r\n        if(!User.getUser().getProfile_pic().isEmpty() && User.getUser().getProfile_bitmap() == null) {\r\n            DownloadProfilePic download = new DownloadProfilePic();\r\n            download.execute(User.getUser().getProfile_pic());\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public boolean onCreateOptionsMenu(Menu menu) {\r\n        getMenuInflater().inflate(R.menu.home_menu, menu);\r\n        menu.getItem(0).getIcon().mutate().setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_ATOP);\r\n        return true;\r\n    }\r\n\r\n    @Override\r\n    public boolean onOptionsItemSelected(@NonNull MenuItem item) {\r\n        if(item.getItemId() == R.id.notification)\r\n            startActivity(new Intent(this,NotificationActivity.class));\r\n        return super.onOptionsItemSelected(item);\r\n    }\r\n\r\n    @Override\r\n    public boolean onNavigationItemSelected(@NonNull MenuItem item) {\r\n        switch (item.getItemId()){\r\n            case R.id.drawer_share:\r\n\r\n                break;\r\n            case R.id.drawer_rate:\r\n\r\n                break;\r\n            case R.id.drawer_feedback:\r\n\r\n                break;\r\n            case R.id.drawer_about_us:\r\n\r\n                break;\r\n            case R.id.drawer_setting:\r\n\r\n                break;\r\n            case R.id.drawer_logout:\r\n                dialog = createDialog(\"Logout\",R.drawable.ic_baseline_exit_to_app_24);\r\n                dialog.create().show();\r\n                break;\r\n            default:\r\n                return false;\r\n        }\r\n        drawerLayout.closeDrawer(GravityCompat.START);\r\n        return false;\r\n    }\r\n\r\n    private AlertDialog.Builder createDialog(String title, int icon) {\r\n        return new AlertDialog.Builder(this)\r\n                .setTitle(title)\r\n                .setMessage(\"Are you sure?\")\r\n                .setIcon(icon)\r\n                .setNegativeButton(\"OK\", new DialogInterface.OnClickListener() {\r\n                    @Override\r\n                    public void onClick(DialogInterface dialog, int which) {\r\n                        PrefManager prefManager = new PrefManager(getApplicationContext());\r\n                        prefManager.setLogout();\r\n                        startActivity(new Intent(HomeActivity.this,SigninActivity.class));\r\n                        finish();\r\n                    }\r\n                }).setPositiveButton(\"Cancel\", new DialogInterface.OnClickListener() {\r\n                    @Override\r\n                    public void onClick(DialogInterface dialog, int which) {\r\n\r\n                    }\r\n                }).setCancelable(false);\r\n    }\r\n\r\n    @Override\r\n    public void onBackPressed() {\r\n        if(drawerLayout.isDrawerOpen(GravityCompat.START))\r\n            drawerLayout.closeDrawer(GravityCompat.START);\r\n        else\r\n            super.onBackPressed();\r\n    }\r\n\r\n    public void showPopup(View v) { //Fab Action\r\n\r\n        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(HomeActivity.this, R.style.BottomSheetTheme);\r\n        View bottomSheetView = LayoutInflater.from(getApplicationContext())\r\n                .inflate(R.layout.bottom_sheet_dialog, (LinearLayout)findViewById(R.id.bottom_sheet));\r\n\r\n        bottomSheetView.findViewById(R.id.hide_sheet).setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                bottomSheetDialog.dismiss();\r\n            }\r\n        });\r\n\r\n        bottomSheetView.findViewById(R.id.ilost).setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                startActivity(new Intent(HomeActivity.this, LostObjectDetailsActivity.class));\r\n                bottomSheetDialog.dismiss();\r\n            }\r\n        });\r\n\r\n        bottomSheetView.findViewById(R.id.ifound).setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                startActivity(new Intent(HomeActivity.this, FoundObjectActivity.class));\r\n                bottomSheetDialog.dismiss();\r\n            }\r\n        });\r\n\r\n        bottomSheetDialog.setContentView(bottomSheetView);\r\n        bottomSheetDialog.show();\r\n\r\n    }\r\n\r\n\r\n    private BottomNavigationView.OnNavigationItemSelectedListener navListner =\r\n            new BottomNavigationView.OnNavigationItemSelectedListener() {\r\n                @Override\r\n                public boolean onNavigationItemSelected(@NonNull MenuItem item) {\r\n                    Fragment selectedFragment = getSupportFragmentManager().getFragments().get(0);\r\n                    switch (item.getItemId()) {\r\n                        case R.id.miHome:\r\n                            if(!(selectedFragment instanceof HomeFragment))\r\n                                selectedFragment = fhome;\r\n                            break;\r\n                        case R.id.miMatch:\r\n                            if(!(selectedFragment instanceof MatchFragment))\r\n                                selectedFragment = fmatch;\r\n                            break;\r\n                        case R.id.miProfile:\r\n                            if(!(selectedFragment instanceof ProfileFragment))\r\n                                selectedFragment = fprofile;\r\n                            break;\r\n                        case R.id.miLocation:\r\n                            selectedFragment = new FoundMapFragment();\r\n                            break;\r\n                    }\r\n                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();\r\n                    return true;\r\n                }\r\n            };\r\n\r\n    class DownloadProfilePic extends AsyncTask<String,Void, Bitmap> {\r\n\r\n        private Bitmap download(String urlLink) throws IOException {\r\n            Bitmap bitmap = null;\r\n            URL url = null;\r\n            HttpURLConnection httpConn;\r\n            InputStream is = null;\r\n            try {\r\n                url = new URL(urlLink);\r\n                httpConn = (HttpURLConnection) url.openConnection();\r\n                httpConn.connect();\r\n                is = httpConn.getInputStream();\r\n                bitmap = BitmapFactory.decodeStream(is);\r\n            }catch (MalformedURLException e){\r\n                Log.e(\"DownloadProfilePic\", \"download: \"+e.getMessage());\r\n            }\r\n            return  bitmap;\r\n        }\r\n\r\n        @Override\r\n        protected Bitmap doInBackground(String... urls) {\r\n            try {\r\n                return download(urls[0]);\r\n            } catch (IOException e) {\r\n                e.printStackTrace();\r\n            }\r\n            return null;\r\n        }\r\n\r\n        @Override\r\n        protected void onPostExecute(Bitmap bitmap) {\r\n            super.onPostExecute(bitmap);\r\n            if(bitmap==null)return;\r\n            User.getUser().setProfile_bitmap(bitmap);\r\n            imgnavigator.setImageBitmap(bitmap);\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/helloworld/goodpoint/ui/HomeActivity.java	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ app/src/main/java/com/helloworld/goodpoint/ui/HomeActivity.java	(date 1621854743164)
+@@ -107,9 +107,11 @@
+         imgnavigator = view.findViewById(R.id.circuler_profile_img);
+         namenavigator.setText(User.getUser().getUsername());
+         mailnavigator.setText(User.getUser().getEmail());
+-        if(!User.getUser().getProfile_pic().isEmpty() && User.getUser().getProfile_bitmap() == null) {
++        if(User.getUser().getProfile_pic() != null &&!User.getUser().getProfile_pic().isEmpty() && User.getUser().getProfile_bitmap() == null) {
++            Log.e("Profile Pic", User.getUser().getProfile_pic());
++            String dnsLink = new PrefManager(this).getNGROKLink();
+             DownloadProfilePic download = new DownloadProfilePic();
+-            download.execute(User.getUser().getProfile_pic());
++            download.execute(dnsLink+User.getUser().getProfile_pic()+"/");
+         }
+     }
+ 
+@@ -254,6 +256,7 @@
+             URL url = null;
+             HttpURLConnection httpConn;
+             InputStream is = null;
++            Log.e("ProfilePic", urlLink);
+             try {
+                 url = new URL(urlLink);
+                 httpConn = (HttpURLConnection) url.openConnection();
+Index: backend/find_losts/migrations/0003_auto_20210429_1627.py
+===================================================================
+--- backend/find_losts/migrations/0003_auto_20210429_1627.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0003_auto_20210429_1627.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-04-29 14:27
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('find_losts', '0002_auto_20210216_2354'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='lostitem',
+-            name='image',
+-            field=models.ImageField(blank=True, null=True, upload_to=''),
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0011_auto_20210503_0616.py
+===================================================================
+--- backend/find_losts/migrations/0011_auto_20210503_0616.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0011_auto_20210503_0616.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,19 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-03 04:16
+-
+-from django.db import migrations, models
+-import django.db.models.deletion
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('find_losts', '0010_auto_20210503_0612'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='lostpersonimage',
+-            name='id',
+-            field=models.OneToOneField(db_column='id', on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='find_losts.lostperson'),
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0008_auto_20210503_0451.py
+===================================================================
+--- backend/find_losts/migrations/0008_auto_20210503_0451.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0008_auto_20210503_0451.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-03 02:51
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('find_losts', '0007_auto_20210503_0451'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='lostpersonimage',
+-            name='image',
+-            field=models.ImageField(unique=True, upload_to=''),
+-        ),
+-    ]
+Index: backend/user_account/migrations/0002_auto_20210318_0955.py
+===================================================================
+--- backend/user_account/migrations/0002_auto_20210318_0955.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/user_account/migrations/0002_auto_20210318_0955.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.4 on 2021-03-18 07:55
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('user_account', '0001_initial'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='user',
+-            name='email',
+-            field=models.EmailField(blank=True, max_length=1),
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0010_auto_20210503_0612.py
+===================================================================
+--- backend/find_losts/migrations/0010_auto_20210503_0612.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0010_auto_20210503_0612.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-03 04:12
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('find_losts', '0009_auto_20210503_0456'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='foundobject',
+-            name='date',
+-            field=models.DateField(),
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0014_remove_founditem_image.py
+===================================================================
+--- backend/find_losts/migrations/0014_remove_founditem_image.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0014_remove_founditem_image.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,17 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-15 13:14
+-
+-from django.db import migrations
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('find_losts', '0013_auto_20210514_0152'),
+-    ]
+-
+-    operations = [
+-        migrations.RemoveField(
+-            model_name='founditem',
+-            name='image',
+-        ),
+-    ]
+Index: backend/user_account/migrations/0001_initial.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/user_account/migrations/0001_initial.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/user_account/migrations/0001_initial.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,48 +0,0 @@
+-# Generated by Django 3.1.4 on 2021-02-16 21:54
+-
+-import django.contrib.auth.models
+-import django.contrib.auth.validators
+-from django.db import migrations, models
+-import django.utils.timezone
+-import user_account.models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    initial = True
+-
+-    dependencies = [
+-        ('auth', '0012_alter_user_first_name_max_length'),
+-    ]
+-
+-    operations = [
+-        migrations.CreateModel(
+-            name='User',
+-            fields=[
+-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+-                ('password', models.CharField(max_length=128, verbose_name='password')),
+-                ('last_login', models.DateTimeField(blank=True, null=True, verbose_name='last login')),
+-                ('is_superuser', models.BooleanField(default=False, help_text='Designates that this user has all permissions without explicitly assigning them.', verbose_name='superuser status')),
+-                ('username', models.CharField(error_messages={'unique': 'A user with that username already exists.'}, help_text='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.', max_length=150, unique=True, validators=[django.contrib.auth.validators.UnicodeUsernameValidator()], verbose_name='username')),
+-                ('first_name', models.CharField(blank=True, max_length=150, verbose_name='first name')),
+-                ('last_name', models.CharField(blank=True, max_length=150, verbose_name='last name')),
+-                ('is_staff', models.BooleanField(default=False, help_text='Designates whether the user can log into this admin site.', verbose_name='staff status')),
+-                ('is_active', models.BooleanField(default=True, help_text='Designates whether this user should be treated as active. Unselect this instead of deleting accounts.', verbose_name='active')),
+-                ('date_joined', models.DateTimeField(default=django.utils.timezone.now, verbose_name='date joined')),
+-                ('email', models.EmailField(max_length=65, unique=True)),
+-                ('phone', models.CharField(max_length=20, unique=True)),
+-                ('birthdate', models.DateField()),
+-                ('city', models.CharField(max_length=35)),
+-                ('profile_pic', models.ImageField(blank=True, null=True, upload_to=user_account.models.profile_pic_dir)),
+-                ('id_card_pic', models.ImageField(blank=True, null=True, upload_to=user_account.models.idcard_pic_dir)),
+-                ('groups', models.ManyToManyField(blank=True, help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', related_name='user_set', related_query_name='user', to='auth.Group', verbose_name='groups')),
+-                ('user_permissions', models.ManyToManyField(blank=True, help_text='Specific permissions for this user.', related_name='user_set', related_query_name='user', to='auth.Permission', verbose_name='user permissions')),
+-            ],
+-            options={
+-                'db_table': 'user',
+-            },
+-            managers=[
+-                ('objects', django.contrib.auth.models.UserManager()),
+-            ],
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0001_initial.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/find_losts/migrations/0001_initial.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0001_initial.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,113 +0,0 @@
+-# Generated by Django 3.1.4 on 2021-02-16 21:54
+-
+-from django.db import migrations, models
+-import django.db.models.deletion
+-
+-
+-class Migration(migrations.Migration):
+-
+-    initial = True
+-
+-    dependencies = [
+-    ]
+-
+-    operations = [
+-        migrations.CreateModel(
+-            name='Candidate',
+-            fields=[
+-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+-                ('percent', models.DecimalField(decimal_places=4, max_digits=5)),
+-                ('is_matched', models.BooleanField(default=False)),
+-            ],
+-            options={
+-                'db_table': 'candidate',
+-            },
+-        ),
+-        migrations.CreateModel(
+-            name='FoundObject',
+-            fields=[
+-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+-                ('date', models.DateTimeField()),
+-                ('longitude', models.DecimalField(decimal_places=10, default=0.0, max_digits=14)),
+-                ('latitude', models.DecimalField(decimal_places=10, default=0.0, max_digits=14)),
+-                ('city', models.CharField(max_length=35)),
+-                ('is_matched', models.BooleanField(default=False)),
+-            ],
+-            options={
+-                'db_table': 'found_object',
+-            },
+-        ),
+-        migrations.CreateModel(
+-            name='LostObject',
+-            fields=[
+-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+-                ('date', models.DateTimeField()),
+-                ('city', models.CharField(max_length=35)),
+-                ('is_matched', models.BooleanField(default=False)),
+-            ],
+-            options={
+-                'db_table': 'lost_object',
+-            },
+-        ),
+-        migrations.CreateModel(
+-            name='FoundItem',
+-            fields=[
+-                ('id', models.OneToOneField(db_column='id', on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='find_losts.foundobject')),
+-                ('type', models.CharField(max_length=20)),
+-                ('color', models.CharField(max_length=20)),
+-                ('brand', models.CharField(max_length=50)),
+-                ('description', models.CharField(max_length=700)),
+-                ('serial_number', models.CharField(blank=True, max_length=100, null=True)),
+-                ('image', models.ImageField(unique=True, upload_to='')),
+-            ],
+-            options={
+-                'db_table': 'found_item',
+-            },
+-        ),
+-        migrations.CreateModel(
+-            name='FoundPerson',
+-            fields=[
+-                ('id', models.OneToOneField(db_column='id', on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='find_losts.foundobject')),
+-                ('name', models.CharField(blank=True, max_length=150, null=True)),
+-            ],
+-            options={
+-                'db_table': 'found_person',
+-            },
+-        ),
+-        migrations.CreateModel(
+-            name='LostItem',
+-            fields=[
+-                ('id', models.OneToOneField(db_column='id', on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='find_losts.lostobject')),
+-                ('type', models.CharField(max_length=20)),
+-                ('color', models.CharField(max_length=20)),
+-                ('brand', models.CharField(max_length=50)),
+-                ('description', models.CharField(max_length=700)),
+-                ('serial_number', models.CharField(blank=True, max_length=100, null=True)),
+-                ('image', models.ImageField(blank=True, null=True, unique=True, upload_to='')),
+-            ],
+-            options={
+-                'db_table': 'lost_item',
+-            },
+-        ),
+-        migrations.CreateModel(
+-            name='LostPerson',
+-            fields=[
+-                ('id', models.OneToOneField(db_column='id', on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='find_losts.lostobject')),
+-                ('name', models.CharField(max_length=150)),
+-            ],
+-            options={
+-                'db_table': 'lost_person',
+-            },
+-        ),
+-        migrations.CreateModel(
+-            name='MatchedPerson',
+-            fields=[
+-                ('id_fp', models.OneToOneField(db_column='found_person_id', on_delete=django.db.models.deletion.CASCADE, primary_key=True, related_name='match', serialize=False, to='find_losts.foundobject')),
+-                ('date_of_receiving', models.DateTimeField(auto_now_add=True)),
+-                ('percent', models.DecimalField(decimal_places=4, max_digits=5)),
+-            ],
+-            options={
+-                'db_table': 'matched_Person',
+-            },
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0012_auto_20210503_1505.py
+===================================================================
+--- backend/find_losts/migrations/0012_auto_20210503_1505.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0012_auto_20210503_1505.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-03 13:05
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('find_losts', '0011_auto_20210503_0616'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='lostobject',
+-            name='date',
+-            field=models.DateField(),
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0009_auto_20210503_0456.py
+===================================================================
+--- backend/find_losts/migrations/0009_auto_20210503_0456.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0009_auto_20210503_0456.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,17 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-03 02:56
+-
+-from django.db import migrations
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('find_losts', '0008_auto_20210503_0451'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterUniqueTogether(
+-            name='lostpersonimage',
+-            unique_together={('id', 'image')},
+-        ),
+-    ]
+Index: backend/notification/migrations/0001_initial.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/notification/migrations/0001_initial.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/notification/migrations/0001_initial.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,29 +0,0 @@
+-# Generated by Django 3.1.4 on 2021-02-16 21:54
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    initial = True
+-
+-    dependencies = [
+-    ]
+-
+-    operations = [
+-        migrations.CreateModel(
+-            name='Notification',
+-            fields=[
+-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+-                ('title', models.CharField(max_length=30)),
+-                ('description', models.CharField(max_length=100)),
+-                ('type', models.IntegerField()),
+-                ('date_time', models.DateTimeField(auto_now_add=True)),
+-                ('is_sent', models.BooleanField(default=False)),
+-                ('is_read', models.BooleanField(default=False)),
+-            ],
+-            options={
+-                'db_table': 'notification',
+-            },
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0006_auto_20210501_1627.py
+===================================================================
+--- backend/find_losts/migrations/0006_auto_20210501_1627.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0006_auto_20210501_1627.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,19 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-01 14:27
+-
+-from django.db import migrations, models
+-import django.db.models.deletion
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('find_losts', '0005_auto_20210501_1552'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='foundpersonimage',
+-            name='id',
+-            field=models.ForeignKey(db_column='id', on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='find_losts.foundperson'),
+-        ),
+-    ]
+Index: backend/notification/migrations/0004_auto_20210514_1846.py
+===================================================================
+--- backend/notification/migrations/0004_auto_20210514_1846.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/notification/migrations/0004_auto_20210514_1846.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-14 16:46
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('notification', '0003_auto_20210503_0612'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='notification',
+-            name='date_time',
+-            field=models.DateTimeField(auto_now_add=True),
+-        ),
+-    ]
+Index: backend/notification/migrations/0002_notification_user_id.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/notification/migrations/0002_notification_user_id.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/notification/migrations/0002_notification_user_id.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,23 +0,0 @@
+-# Generated by Django 3.1.4 on 2021-02-16 21:54
+-
+-from django.conf import settings
+-from django.db import migrations, models
+-import django.db.models.deletion
+-
+-
+-class Migration(migrations.Migration):
+-
+-    initial = True
+-
+-    dependencies = [
+-        ('notification', '0001_initial'),
+-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+-    ]
+-
+-    operations = [
+-        migrations.AddField(
+-            model_name='notification',
+-            name='user_id',
+-            field=models.ForeignKey(db_column='user_id', on_delete=django.db.models.deletion.CASCADE, related_name='notify', to=settings.AUTH_USER_MODEL),
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0004_auto_20210501_0251.py
+===================================================================
+--- backend/find_losts/migrations/0004_auto_20210501_0251.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0004_auto_20210501_0251.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-01 00:51
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('find_losts', '0003_auto_20210429_1627'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='lostobject',
+-            name='date',
+-            field=models.DateField(),
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0007_auto_20210503_0451.py
+===================================================================
+--- backend/find_losts/migrations/0007_auto_20210503_0451.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0007_auto_20210503_0451.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,48 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-03 02:51
+-
+-from django.db import migrations, models
+-import django.db.models.deletion
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('find_losts', '0006_auto_20210501_1627'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='foundobject',
+-            name='date',
+-            field=models.DateTimeField(),
+-        ),
+-        migrations.AlterField(
+-            model_name='foundpersonimage',
+-            name='id',
+-            field=models.OneToOneField(db_column='id', on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='find_losts.foundperson'),
+-        ),
+-        migrations.AlterField(
+-            model_name='lostitem',
+-            name='image',
+-            field=models.ImageField(blank=True, null=True, unique=True, upload_to=''),
+-        ),
+-        migrations.AlterField(
+-            model_name='lostobject',
+-            name='date',
+-            field=models.DateTimeField(),
+-        ),
+-        migrations.AlterField(
+-            model_name='lostpersonimage',
+-            name='id',
+-            field=models.AutoField(primary_key=True, serialize=False),
+-        ),
+-        migrations.AlterField(
+-            model_name='lostpersonimage',
+-            name='image',
+-            field=models.ImageField(upload_to=''),
+-        ),
+-        migrations.AlterUniqueTogether(
+-            name='lostpersonimage',
+-            unique_together=set(),
+-        ),
+-    ]
+Index: backend/notification/migrations/0003_auto_20210503_0612.py
+===================================================================
+--- backend/notification/migrations/0003_auto_20210503_0612.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/notification/migrations/0003_auto_20210503_0612.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-03 04:12
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('notification', '0002_notification_user_id'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='notification',
+-            name='date_time',
+-            field=models.DateField(auto_now_add=True),
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0002_auto_20210216_2354.py
+===================================================================
+--- backend/find_losts/migrations/0002_auto_20210216_2354.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0002_auto_20210216_2354.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,85 +0,0 @@
+-# Generated by Django 3.1.4 on 2021-02-16 21:54
+-
+-from django.conf import settings
+-from django.db import migrations, models
+-import django.db.models.deletion
+-
+-
+-class Migration(migrations.Migration):
+-
+-    initial = True
+-
+-    dependencies = [
+-        ('find_losts', '0001_initial'),
+-        ('notification', '0001_initial'),
+-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+-    ]
+-
+-    operations = [
+-        migrations.AddField(
+-            model_name='lostobject',
+-            name='user_id',
+-            field=models.ForeignKey(db_column='user_id', on_delete=django.db.models.deletion.CASCADE, related_name='lost', to=settings.AUTH_USER_MODEL),
+-        ),
+-        migrations.AddField(
+-            model_name='foundobject',
+-            name='user_id',
+-            field=models.ForeignKey(db_column='user_id', on_delete=django.db.models.deletion.CASCADE, related_name='found', to=settings.AUTH_USER_MODEL),
+-        ),
+-        migrations.AddField(
+-            model_name='candidate',
+-            name='notify_id',
+-            field=models.ForeignKey(db_column='notify_id', on_delete=django.db.models.deletion.CASCADE, related_name='reach_candidates_to_who_found', to='notification.notification'),
+-        ),
+-        migrations.AddField(
+-            model_name='matchedperson',
+-            name='id_lp',
+-            field=models.OneToOneField(db_column='lost_person_id', on_delete=django.db.models.deletion.CASCADE, related_name='match', to='find_losts.lostobject'),
+-        ),
+-        migrations.AddField(
+-            model_name='matchedperson',
+-            name='notify_id_fp',
+-            field=models.ForeignKey(db_column='notify_id_fp', on_delete=django.db.models.deletion.CASCADE, related_name='reach_match_to_who_found', to='notification.notification'),
+-        ),
+-        migrations.AddField(
+-            model_name='matchedperson',
+-            name='notify_id_lp',
+-            field=models.ForeignKey(db_column='notify_id_lp', on_delete=django.db.models.deletion.CASCADE, related_name='reach_match_to_who_lost', to='notification.notification'),
+-        ),
+-        migrations.AddField(
+-            model_name='candidate',
+-            name='id_fi',
+-            field=models.ForeignKey(db_column='found_item_id', on_delete=django.db.models.deletion.CASCADE, related_name='candidate', to='find_losts.founditem'),
+-        ),
+-        migrations.AddField(
+-            model_name='candidate',
+-            name='id_li',
+-            field=models.ForeignKey(db_column='lost_item_id', on_delete=django.db.models.deletion.CASCADE, related_name='candidate', to='find_losts.lostitem'),
+-        ),
+-        migrations.CreateModel(
+-            name='LostPersonImage',
+-            fields=[
+-                ('id', models.OneToOneField(db_column='id', on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='find_losts.lostperson')),
+-                ('image', models.ImageField(unique=True, upload_to='')),
+-            ],
+-            options={
+-                'db_table': 'lost_person_image',
+-                'unique_together': {('id', 'image')},
+-            },
+-        ),
+-        migrations.CreateModel(
+-            name='FoundPersonImage',
+-            fields=[
+-                ('id', models.OneToOneField(db_column='id', on_delete=django.db.models.deletion.CASCADE, primary_key=True, serialize=False, to='find_losts.foundperson')),
+-                ('image', models.ImageField(unique=True, upload_to='')),
+-            ],
+-            options={
+-                'db_table': 'found_person_image',
+-                'unique_together': {('id', 'image')},
+-            },
+-        ),
+-        migrations.AlterUniqueTogether(
+-            name='candidate',
+-            unique_together={('id_li', 'id_fi')},
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0013_auto_20210514_0152.py
+===================================================================
+--- backend/find_losts/migrations/0013_auto_20210514_0152.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0013_auto_20210514_0152.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-13 23:52
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('find_losts', '0012_auto_20210503_1505'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='lostitem',
+-            name='image',
+-            field=models.ImageField(blank=True, null=True, upload_to=''),
+-        ),
+-    ]
+Index: backend/find_losts/migrations/0005_auto_20210501_1552.py
+===================================================================
+--- backend/find_losts/migrations/0005_auto_20210501_1552.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/migrations/0005_auto_20210501_1552.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
+@@ -1,18 +0,0 @@
+-# Generated by Django 3.1.7 on 2021-05-01 13:52
+-
+-from django.db import migrations, models
+-
+-
+-class Migration(migrations.Migration):
+-
+-    dependencies = [
+-        ('find_losts', '0004_auto_20210501_0251'),
+-    ]
+-
+-    operations = [
+-        migrations.AlterField(
+-            model_name='foundobject',
+-            name='date',
+-            field=models.DateField(),
+-        ),
+-    ]
+Index: backend/find_losts/serializers.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from rest_framework import serializers\r\nfrom rest_framework_simplejwt.tokens import RefreshToken, TokenError\r\nfrom .models import *\r\nfrom user_account.models import User\r\n\r\n\r\nclass LostObjectSerializer(serializers.ModelSerializer):\r\n\r\n    class Meta:\r\n        model = LostObject\r\n        fields = ['id', 'date', 'city', 'is_matched', 'user_id']\r\n\r\n\r\nclass LostItemSerializer(serializers.ModelSerializer):\r\n\r\n    class Meta:\r\n        model = LostItem\r\n        fields = ['id', 'type', 'serial_number', 'brand', 'color', 'description', 'image']\r\n\r\n    def validate(self, attrs):\r\n        if LostPerson.objects.filter(id=attrs.get('id', '')).exists():\r\n            raise serializers.ValidationError({'id': {'id already exists'}})\r\n        return super().validate(attrs)\r\n\r\n\r\nclass LostPersonSerializer(serializers.ModelSerializer):\r\n\r\n    class Meta:\r\n        model = LostPerson\r\n        fields = ['id', 'name']\r\n\r\n    def validate(self, attrs):\r\n        if LostItem.objects.filter(id=attrs.get('id', '')).exists():\r\n            raise serializers.ValidationError({'id': {'id already exists'}})\r\n        return super().validate(attrs)\r\n\r\n\r\nclass LostPersonImageSerializer(serializers.ModelSerializer):\r\n    class Meta:\r\n        model = LostPersonImage\r\n        fields = '__all__'\r\n\r\n\r\n\r\nclass FoundObjectSerializer(serializers.ModelSerializer):\r\n    class Meta:\r\n        model = FoundObject\r\n        fields = ['id', 'date', 'longitude', 'latitude', 'city', 'user_id', 'is_matched']\r\n\r\nclass FoundItemSerializer(serializers.ModelSerializer):\r\n    class Meta:\r\n        model = FoundItem\r\n        fields = ['id', 'type', 'color', 'brand', 'description', 'serial_number']#image_removed\r\n\r\n    def validate(self, attrs):\r\n        if FoundPerson.objects.filter(id=attrs.get('id', '')).exists():\r\n            raise serializers.ValidationError({'id': {'id already exists'}})\r\n        return super().validate(attrs)\r\n\r\n\r\nclass FoundPersonSerializer(serializers.ModelSerializer):\r\n    class Meta:\r\n        model = FoundPerson\r\n        fields = ['id', 'name']\r\n\r\n    def validate(self, attrs):\r\n        if FoundItem.objects.filter(id=attrs.get('id', '')).exists():\r\n            raise serializers.ValidationError({'id': {'id already exists'}})\r\n        return super().validate(attrs)\r\n\r\n\r\nclass FoundPersonImageSerializer(serializers.ModelSerializer):\r\n    class Meta:\r\n        model = FoundPersonImage\r\n        fields = ['id_image', 'image']\r\n\r\nclass MapSerializer(serializers.ModelSerializer):\r\n    longitude = serializers.DecimalField(max_digits=14, decimal_places=10, source='id.longitude')\r\n    latitude = serializers.DecimalField(max_digits=14, decimal_places=10, source='id.latitude')\r\n    user_id = serializers.IntegerField(source='id.user_id.id')\r\n\r\n    class Meta:\r\n        model = FoundItem\r\n        fields = ['longitude', 'latitude', 'user_id']\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/find_losts/serializers.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/serializers.py	(date 1621860226693)
+@@ -2,13 +2,16 @@
+ from rest_framework_simplejwt.tokens import RefreshToken, TokenError
+ from .models import *
+ from user_account.models import User
++from django.db.models import Count
++import face_recognition
++import numpy as np
+ 
+ 
+ class LostObjectSerializer(serializers.ModelSerializer):
+ 
+     class Meta:
+         model = LostObject
+-        fields = ['id', 'date', 'city', 'is_matched', 'user_id']
++        fields = ['date', 'city','user_id']
+ 
+ 
+ class LostItemSerializer(serializers.ModelSerializer):
+@@ -21,36 +24,122 @@
+         if LostPerson.objects.filter(id=attrs.get('id', '')).exists():
+             raise serializers.ValidationError({'id': {'id already exists'}})
+         return super().validate(attrs)
+-
+-
+-class LostPersonSerializer(serializers.ModelSerializer):
+-
+-    class Meta:
+-        model = LostPerson
+-        fields = ['id', 'name']
+-
+-    def validate(self, attrs):
+-        if LostItem.objects.filter(id=attrs.get('id', '')).exists():
+-            raise serializers.ValidationError({'id': {'id already exists'}})
+-        return super().validate(attrs)
+ 
+ 
+ class LostPersonImageSerializer(serializers.ModelSerializer):
+     class Meta:
+         model = LostPersonImage
+-        fields = '__all__'
++        fields = ['image']
++
++
++def match_with_found_person(pk):
++    source_img = face_recognition.load_image_file(f'media/lostperson/{pk}.jpg')
++    source_encoding = face_recognition.face_encodings(source_img)[0]
++    founds = list(FoundPerson.objects.values_list('id'))
++
++    encodings = []
++    ids = []
++    min_val = -1
++    for id_f in founds:
++        face = face_recognition.load_image_file(f'media/foundperson/{id_f[0]}.jpg')
++        encodings.append(face_recognition.face_encodings(face)[0])
++        ids.append(id_f[0])
+ 
++    dist = face_recognition.face_distance(encodings,source_encoding)
++    if dist.size > 0:
++        min_val = min(dist)
+ 
++    if 0 < min_val <= 0.52:
++        return min_val, ids[dist.argmin()]
++    else:
++        return -1, -1
++
++"""
++    mini = 1.0
++    minid = -1
++    for id in ids:
++        sum_dist = 0.0
++        for img_num in range(id.number_of_images):
++            face = face_recognition.load_image_file(f'media/foundperson/{source_id.pk}/{img_num + 1}.jpg')
++            encoding = face_recognition.face_encodings(face)[0]
++            dist = list(face_recognition.face_distance(source_encodings, encoding))
++            sum_dist = sum_dist + sum(dist)
++
++        avg = sum_dist/(source_id.number_of_images*id.number_of_images)
++        if avg < mini:
++            mini = avg
++            minid = id
++
++    if 0 < mini <= 0.52:
++        return mini, minid
++    else:
++        return -1, -1
++"""
++
++
++class LostPersonSerializer(serializers.ModelSerializer):
++    date = serializers.DateField()
++    city = serializers.CharField(max_length=35)
++    user_id = serializers.IntegerField()
++
++    class Meta:
++        model = LostPerson
++        fields = ['date', 'city', 'user_id', 'name', 'image']
++    
++    def create(self, validated_data):
++        data = validated_data.copy()
++        #images_data = data.pop('images')
++        #self.context.get('request').data.pop('images')
++        user = User.objects.get(id=data.pop('user_id'))
++        person_id = LostObject.objects.create(date=data.pop('date'), city=data.pop('city'), user_id=user)
++        person = None
++
++        try:
++            person = LostPerson.objects.create(id=person_id, **data)
++            print(person)
++        except TypeError:
++            obj = LostObject.objects.get(id=person.id)
++            obj.delete()
++            raise TypeError('TypeError: LostPerson.objects.create()')
++        """
++        try:
++            cnt = 0
++            for img in images_data:
++                cnt = cnt + 1
++                image = LostPersonImage.objects.create(id_lp=person.pk, image_number=cnt, image=img)
++                person.person_image.add(image)
++        except TypeError:
++            person = LostPerson.objects.get(id=person.id)
++            obj = LostObject.objects.get(id=person.id)
++            person.delete()
++            obj.delete()
++            raise TypeError('TypeError: LostPersonImage.objects.create()')
++        """
++
++        res_match = match_with_found_person(person.pk)
++        print(res_match)
++        matched = False
++        """
++        if res_match != -1:
++            matched = True
++            matched_person = FoundPerson.objects.filter(id=res_match[0])
++            #Notification.objects.create()
++            #Notification.objects.create()
++            #MatchedPerson.objects.create()
++            pass
++        """
++
++        return validated_data
+ 
+ class FoundObjectSerializer(serializers.ModelSerializer):
+     class Meta:
+         model = FoundObject
+-        fields = ['id', 'date', 'longitude', 'latitude', 'city', 'user_id', 'is_matched']
++        fields = ['date', 'longitude', 'latitude', 'city', 'user_id', 'is_matched']
+ 
+ class FoundItemSerializer(serializers.ModelSerializer):
+     class Meta:
+         model = FoundItem
+-        fields = ['id', 'type', 'color', 'brand', 'description', 'serial_number']#image_removed
++        fields = ['id', 'type', 'color', 'brand', 'description', 'serial_number', 'image']
+ 
+     def validate(self, attrs):
+         if FoundPerson.objects.filter(id=attrs.get('id', '')).exists():
+@@ -58,15 +147,86 @@
+         return super().validate(attrs)
+ 
+ 
++def match_with_lost_person(pk):
++    source_img = face_recognition.load_image_file(f'media/foundperson/{pk}.jpg')
++    source_encoding = face_recognition.face_encodings(source_img)[0]
++    losts = list(LostPerson.objects.values_list('id'))
++    print(losts)
++    encodings = []
++    ids = []
++    for id_l in losts:
++        face = face_recognition.load_image_file(f'media/lostperson/{id_l[0]}.jpg')
++        encodings.append(face_recognition.face_encodings(face)[0])
++        ids.append(id_l[0])
++
++    dist = face_recognition.face_distance(encodings, source_encoding)
++    min_val = min(dist)
++
++    if dist.size > 0:
++        min_val = min(dist)
++
++    if 0 < min_val <= 0.52:
++        return min_val, ids[dist.argmin()]
++    else:
++        return -1, -1
++
++
+ class FoundPersonSerializer(serializers.ModelSerializer):
++    date = serializers.DateField()
++    longitude = serializers.DecimalField(max_digits=14, decimal_places=10, default=0.0)
++    latitude = serializers.DecimalField(max_digits=14, decimal_places=10, default=0.0)
++    city = serializers.CharField(max_length=35)
++    user_id = serializers.IntegerField()
++
+     class Meta:
+         model = FoundPerson
+-        fields = ['id', 'name']
++        fields = ['date', 'longitude', 'latitude', 'city', 'user_id', 'name', 'image']
++
++    def create(self, validated_data):
++        data = validated_data.copy()
++        #images_data = data.pop('images')
++        #self.context.get('request').data.pop('images')
++        user = User.objects.get(id=data.pop('user_id'))
++        person_id = FoundObject.objects.create(date=data.pop('date'), longitude=data.pop('longitude'),
++                                              latitude=data.pop('latitude'), city=data.pop('city'), user_id=user)
++        person = None
+ 
+-    def validate(self, attrs):
+-        if FoundItem.objects.filter(id=attrs.get('id', '')).exists():
+-            raise serializers.ValidationError({'id': {'id already exists'}})
+-        return super().validate(attrs)
++        try:
++            person = FoundPerson.objects.create(id=person_id, **data)
++            print(person)
++        except TypeError:
++            obj = FoundObject.objects.get(id=person.id)
++            obj.delete()
++            raise TypeError('TypeError: FoundPerson.objects.create()')
++        """
++        try:
++            cnt = 0
++            for img in images_data:
++                cnt = cnt + 1
++                image = LostPersonImage.objects.create(id_lp=person.pk, image_number=cnt, image=img)
++                person.person_image.add(image)
++        except TypeError:
++            person = LostPerson.objects.get(id=person.id)
++            obj = LostObject.objects.get(id=person.id)
++            person.delete()
++            obj.delete()
++            raise TypeError('TypeError: LostPersonImage.objects.create()')
++        """
++
++        res_match = match_with_lost_person(person.pk)
++        print(res_match)
++        matched = False
++        """
++        if res_match != -1:
++            matched = True
++            matched_person = LostPerson.objects.filter(id=res_match[0])
++            #Notification.objects.create()
++            #Notification.objects.create()
++            #MatchedPerson.objects.create()
++            pass
++        """
++
++        return validated_data
+ 
+ 
+ class FoundPersonImageSerializer(serializers.ModelSerializer):
+@@ -74,6 +234,7 @@
+         model = FoundPersonImage
+         fields = ['id_image', 'image']
+ 
++
+ class MapSerializer(serializers.ModelSerializer):
+     longitude = serializers.DecimalField(max_digits=14, decimal_places=10, source='id.longitude')
+     latitude = serializers.DecimalField(max_digits=14, decimal_places=10, source='id.latitude')
+Index: backend/user_account/serializers.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from rest_framework import serializers\r\nfrom rest_framework_simplejwt.tokens import RefreshToken, TokenError\r\nfrom .models import User\r\n\r\n\r\nclass SignupSerializer(serializers.ModelSerializer):\r\n    username = serializers.CharField(max_length=150)\r\n    # email = serializers.EmailField(max_length=65, min_length=4)\r\n    password = serializers.CharField(max_length=65, min_length=8, write_only=True)\r\n    first_name = serializers.CharField(max_length=255, min_length=2)\r\n    phone = serializers.CharField(max_length=20, min_length=5)\r\n    city = serializers.CharField(max_length=35)\r\n    birthdate = serializers.DateField\r\n    profile_pic = serializers.ImageField\r\n\r\n    class Meta:\r\n        model = User\r\n        fields = ['username', 'password', 'first_name', 'phone', 'city', 'birthdate', 'profile_pic']\r\n\r\n    def validate(self, attrs):\r\n        exist_email = User.objects.filter(username=attrs.get('username', '')).exists()\r\n        exist_phone = User.objects.filter(phone=attrs.get('phone', '')).exists()\r\n        if exist_email and exist_phone:\r\n            raise serializers.ValidationError(\r\n                {\r\n                    'error': {\r\n                        'username': 'Email already exists',\r\n                        'phone': 'Phone number already exists'\r\n                    }\r\n                })\r\n        if exist_email:\r\n            raise serializers.ValidationError({'error': {'username': 'Email already exists', 'phone': ''}})\r\n        if exist_phone:\r\n            raise serializers.ValidationError({'error': {'username': '', 'phone': 'Phone number already exists'}})\r\n        return super().validate(attrs)\r\n\r\n    def create(self, validated_data):\r\n        return User.objects.create_user(**validated_data)\r\n\r\n\r\nclass LogoutSerializer(serializers.Serializer):\r\n    token = serializers.CharField()\r\n\r\n    def validate(self, attrs):\r\n        self.token = attrs['refresh']\r\n        return attrs\r\n\r\n    def save(self, **kwargs):\r\n        try:\r\n            RefreshToken(self.token).blacklist()\r\n        except TokenError:\r\n            self.fail('bad_token')\r\n\r\n    def update(self, instance, validated_data):\r\n        pass\r\n\r\n    def create(self, validated_data):\r\n        pass\r\n\r\n\r\nclass WhoFoundItemSerializer(serializers.ModelSerializer):\r\n    name = serializers.CharField(source='first_name')\r\n    email = serializers.CharField(source='username')\r\n\r\n    class Meta:\r\n        model = User\r\n        fields = ['name', 'email', 'phone']\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/user_account/serializers.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/user_account/serializers.py	(date 1621783334231)
+@@ -4,14 +4,6 @@
+ 
+ 
+ class SignupSerializer(serializers.ModelSerializer):
+-    username = serializers.CharField(max_length=150)
+-    # email = serializers.EmailField(max_length=65, min_length=4)
+-    password = serializers.CharField(max_length=65, min_length=8, write_only=True)
+-    first_name = serializers.CharField(max_length=255, min_length=2)
+-    phone = serializers.CharField(max_length=20, min_length=5)
+-    city = serializers.CharField(max_length=35)
+-    birthdate = serializers.DateField
+-    profile_pic = serializers.ImageField
+ 
+     class Meta:
+         model = User
+Index: backend/find_losts/models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.db import models\r\nfrom user_account.models import User\r\nfrom notification.models import Notification\r\n\r\n\r\n# Create your models here.\r\n\r\nclass LostObject(models.Model):\r\n    date = models.DateField()\r\n    city = models.CharField(max_length=35)\r\n    user_id = models.ForeignKey(User, related_name='lost', on_delete=models.CASCADE, db_column='user_id')\r\n    is_matched = models.BooleanField(default=False)\r\n\r\n    class Meta:\r\n        db_table = 'lost_object'\r\n\r\n\r\nclass LostPerson(models.Model):\r\n    id = models.OneToOneField(LostObject, primary_key=True, on_delete=models.CASCADE, db_column='id')\r\n    name = models.CharField(max_length=150)\r\n\r\n    class Meta:\r\n        db_table = 'lost_person'\r\n\r\n\r\nclass LostPersonImage(models.Model):\r\n    #id = models.AutoField(primary_key=True)\r\n    id = models.OneToOneField(LostPerson, primary_key=True, on_delete=models.CASCADE, db_column='id')\r\n    image = models.ImageField(unique=True)\r\n\r\n    class Meta:\r\n        db_table = 'lost_person_image'\r\n        unique_together = (('id', 'image'),)\r\n\r\ndef lost_item_image(instance,filename):\r\n    return f\"lost_item/{instance.pk}.jpg/\"\r\n\r\nclass LostItem(models.Model):\r\n    id = models.OneToOneField(LostObject, primary_key=True, on_delete=models.CASCADE, db_column='id')\r\n    type = models.CharField(max_length=20)\r\n    color = models.CharField(max_length=20)\r\n    brand = models.CharField(max_length=50)\r\n    description = models.CharField(max_length=700)\r\n    serial_number = models.CharField(max_length=100, blank=True, null=True)\r\n    image = models.ImageField(blank=True, null=True, upload_to=lost_item_image)\r\n\r\n    class Meta:\r\n        db_table = 'lost_item'\r\n\r\n\r\n\r\nclass FoundObject(models.Model):\r\n    date = models.DateField()\r\n    longitude = models.DecimalField(max_digits=14, decimal_places=10, default=0.0)\r\n    latitude = models.DecimalField(max_digits=14, decimal_places=10, default=0.0)\r\n    city = models.CharField(max_length=35)\r\n    user_id = models.ForeignKey(User, related_name='found', on_delete=models.CASCADE, db_column='user_id')\r\n    is_matched = models.BooleanField(default=False)\r\n\r\n    class Meta:\r\n        db_table = 'found_object'\r\n\r\n\r\nclass FoundPerson(models.Model):\r\n    id = models.OneToOneField(FoundObject, primary_key=True, on_delete=models.CASCADE, db_column='id')\r\n    name = models.CharField(max_length=150, blank=True, null=True)\r\n\r\n    class Meta:\r\n        db_table = 'found_person'\r\n\r\n\r\nclass FoundPersonImage(models.Model):\r\n    id = models.OneToOneField(FoundPerson, primary_key=True, on_delete=models.CASCADE, db_column='id')\r\n    image = models.ImageField(unique=True)\r\n\r\n    class Meta:\r\n        db_table = 'found_person_image'\r\n        unique_together = (('id', 'image'),)\r\n\r\n\r\nclass FoundItem(models.Model):\r\n    id = models.OneToOneField(FoundObject, primary_key=True, on_delete=models.CASCADE, db_column='id')\r\n    type = models.CharField(max_length=20)\r\n    color = models.CharField(max_length=20)\r\n    brand = models.CharField(max_length=50)\r\n    description = models.CharField(max_length=700)\r\n    serial_number = models.CharField(max_length=100, blank=True, null=True)\r\n    #image = models.ImageField(unique=True)\r\n\r\n    class Meta:\r\n        db_table = 'found_item'\r\n\r\n\r\nclass Candidate(models.Model):\r\n    id_fi = models.ForeignKey(FoundItem, related_name='candidate', on_delete=models.CASCADE, db_column='found_item_id')\r\n    id_li = models.ForeignKey(LostItem, related_name='candidate', on_delete=models.CASCADE, db_column='lost_item_id')\r\n    percent = models.DecimalField(max_digits=5, decimal_places=4)\r\n    is_matched = models.BooleanField(default=False)\r\n    notify_id = models.ForeignKey(Notification, related_name='reach_candidates_to_who_found', on_delete=models.CASCADE,\r\n                                  db_column='notify_id')\r\n\r\n    class Meta:\r\n        db_table = 'candidate'\r\n        unique_together = (('id_li', 'id_fi'),)\r\n\r\n\r\nclass MatchedPerson(models.Model):\r\n    id_fp = models.OneToOneField(FoundObject, primary_key=True, unique=True, related_name='match',\r\n                                 on_delete=models.CASCADE, db_column='found_person_id')\r\n    id_lp = models.OneToOneField(LostObject, unique=True, related_name='match', on_delete=models.CASCADE,\r\n                                 db_column='lost_person_id')\r\n    date_of_receiving = models.DateTimeField(auto_now_add=True)\r\n    percent = models.DecimalField(max_digits=5, decimal_places=4)\r\n    notify_id_fp = models.ForeignKey(Notification, related_name='reach_match_to_who_found', on_delete=models.CASCADE,\r\n                                     db_column='notify_id_fp')\r\n    notify_id_lp = models.ForeignKey(Notification, related_name='reach_match_to_who_lost', on_delete=models.CASCADE,\r\n                                     db_column='notify_id_lp')\r\n\r\n    class Meta:\r\n        db_table = 'matched_Person'\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/find_losts/models.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/models.py	(date 1621853397255)
+@@ -15,26 +15,29 @@
+         db_table = 'lost_object'
+ 
+ 
++def lost_person_images(instance,filename):
++    return f"lostperson/{instance.pk}.jpg"
++
++
++class LostPersonImage(models.Model):
++    id_lp = models.IntegerField
++    image_number = models.IntegerField
++    image = models.ImageField(blank=True, null=True, upload_to=lost_person_images)
++
++    class Meta:
++        db_table = 'lost_person_image'
++
++
+ class LostPerson(models.Model):
+-    id = models.OneToOneField(LostObject, primary_key=True, on_delete=models.CASCADE, db_column='id')
++    id = models.OneToOneField(LostObject, primary_key=True, on_delete=models.CASCADE, db_column='id', blank=True)
+     name = models.CharField(max_length=150)
++    #person_image = models.ManyToManyField(LostPersonImage, db_column='images', related_name='images')
++    image = models.ImageField(blank=True, null=True, upload_to=lost_person_images)
+ 
+     class Meta:
+         db_table = 'lost_person'
+ 
+ 
+-class LostPersonImage(models.Model):
+-    #id = models.AutoField(primary_key=True)
+-    id = models.OneToOneField(LostPerson, primary_key=True, on_delete=models.CASCADE, db_column='id')
+-    image = models.ImageField(unique=True)
+-
+-    class Meta:
+-        db_table = 'lost_person_image'
+-        unique_together = (('id', 'image'),)
+-
+-def lost_item_image(instance,filename):
+-    return f"lost_item/{instance.pk}.jpg/"
+-
+ class LostItem(models.Model):
+     id = models.OneToOneField(LostObject, primary_key=True, on_delete=models.CASCADE, db_column='id')
+     type = models.CharField(max_length=20)
+@@ -42,13 +45,12 @@
+     brand = models.CharField(max_length=50)
+     description = models.CharField(max_length=700)
+     serial_number = models.CharField(max_length=100, blank=True, null=True)
+-    image = models.ImageField(blank=True, null=True, upload_to=lost_item_image)
++    image = models.ImageField(blank=True, null=True)
+ 
+     class Meta:
+         db_table = 'lost_item'
+ 
+ 
+-
+ class FoundObject(models.Model):
+     date = models.DateField()
+     longitude = models.DecimalField(max_digits=14, decimal_places=10, default=0.0)
+@@ -61,9 +63,14 @@
+         db_table = 'found_object'
+ 
+ 
++def found_person_images(instance,filename):
++    return f"foundperson/{instance.pk}.jpg"
++
++
+ class FoundPerson(models.Model):
+     id = models.OneToOneField(FoundObject, primary_key=True, on_delete=models.CASCADE, db_column='id')
+     name = models.CharField(max_length=150, blank=True, null=True)
++    image = models.ImageField(blank=True, null=True, upload_to=found_person_images)
+ 
+     class Meta:
+         db_table = 'found_person'
+@@ -85,7 +92,7 @@
+     brand = models.CharField(max_length=50)
+     description = models.CharField(max_length=700)
+     serial_number = models.CharField(max_length=100, blank=True, null=True)
+-    #image = models.ImageField(unique=True)
++    image = models.ImageField(null=True, blank=True)
+ 
+     class Meta:
+         db_table = 'found_item'
+Index: backend/user_account/models.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.db import models\r\nfrom django.contrib.auth.models import AbstractUser\r\nfrom rest_framework_simplejwt.tokens import RefreshToken\r\n\r\n\r\n# Create your models here.\r\n\r\ndef profile_pic_dir(instance, filename):\r\n    return 'profile/{0}/'.format(filename)\r\n\r\n\r\ndef idcard_pic_dir(instance, filename):\r\n    return 'idcard/{0}/'.format(filename)\r\n\r\n\r\nclass User(AbstractUser):\r\n    email = models.EmailField(max_length=1, blank=True)\r\n    phone = models.CharField(max_length=20, unique=True)\r\n    birthdate = models.DateField()\r\n    city = models.CharField(max_length=35)\r\n    profile_pic = models.ImageField(blank=True, null=True, upload_to=profile_pic_dir)\r\n    id_card_pic = models.ImageField(blank=True, null=True, upload_to=idcard_pic_dir)\r\n\r\n    def __str__(self):\r\n        return self.username\r\n\r\n    def tokens(self):\r\n        refresh = RefreshToken.for_user(self)\r\n        return {\r\n            'refresh': str(refresh),\r\n            'access': str(refresh.access_token)\r\n        }\r\n\r\n    class Meta:\r\n        db_table = 'user'\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/user_account/models.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/user_account/models.py	(date 1621784448372)
+@@ -6,11 +6,11 @@
+ # Create your models here.
+ 
+ def profile_pic_dir(instance, filename):
+-    return 'profile/{0}/'.format(filename)
++    return f"profile/{filename}"
+ 
+ 
+ def idcard_pic_dir(instance, filename):
+-    return 'idcard/{0}/'.format(filename)
++    return f"idcard/{filename}"
+ 
+ 
+ class User(AbstractUser):
+Index: backend/find_losts/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.shortcuts import render\r\nfrom rest_framework_simplejwt.tokens import RefreshToken, TokenError\r\nfrom rest_framework import serializers\r\nfrom django.http import HttpResponse\r\nfrom .models import LostObject, LostItem, LostPerson, LostPersonImage\r\nfrom rest_framework import status\r\nfrom .serializers import *\r\nfrom rest_framework import generics\r\nfrom rest_framework.views import APIView\r\nfrom rest_framework.response import Response\r\nfrom rest_framework.reverse import reverse\r\nfrom rest_framework import status\r\nfrom rest_framework import viewsets\r\nfrom rest_framework import permissions\r\n\r\n# Create your views here.\r\nclass LostObjectView(generics.ListCreateAPIView):\r\n    queryset = LostObject.objects.all()\r\n    serializer_class = LostObjectSerializer\r\n\r\n\r\nclass LostObjectDetailsView(generics.RetrieveUpdateDestroyAPIView):\r\n    queryset = LostObject.objects.all()\r\n    serializer_class = LostObjectSerializer\r\n\r\n\r\nclass LostItemView(generics.ListCreateAPIView):\r\n    queryset = LostItem.objects.all()\r\n    serializer_class = LostItemSerializer\r\n\r\nclass LostItemDetailsView(generics.RetrieveUpdateDestroyAPIView):\r\n    queryset = LostItem.objects.all()\r\n    serializer_class = LostItemSerializer\r\n\r\n\r\nclass LostPersonView(generics.ListCreateAPIView):\r\n    queryset = LostPerson.objects.all()\r\n    serializer_class = LostPersonSerializer\r\n    def post(self, request):\r\n        serializer = self.serializer_class(data=request.data)\r\n        if serializer.is_valid():\r\n            serializer.save()\r\n            return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)\r\n\r\n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\r\n\r\nclass LostPersonDetailsView(generics.RetrieveUpdateDestroyAPIView):\r\n    queryset = LostPerson.objects.all()\r\n    serializer_class = LostPersonSerializer\r\n\r\n\r\nclass LostPersonImageView(generics.ListCreateAPIView):\r\n    queryset = LostPersonImage.objects.all()\r\n    serializer_class = LostPersonImageSerializer\r\n\r\nclass LostPersonImageDetailsView(generics.RetrieveUpdateDestroyAPIView):\r\n    queryset = LostPersonImage.objects.all()\r\n    serializer_class = LostPersonImageSerializer\r\n\r\n\r\nclass FoundObjectView(generics.ListCreateAPIView):\r\n    queryset = FoundObject.objects.all()\r\n    serializer_class = FoundObjectSerializer\r\n\r\nclass FoundObjectDetalisView(generics.RetrieveUpdateDestroyAPIView):\r\n    queryset = FoundObject.objects.all()\r\n    serializer_class = FoundObjectSerializer\r\n\r\n\r\nclass FoundItemView(generics.ListCreateAPIView):\r\n    queryset = FoundItem.objects.all()\r\n    serializer_class = FoundItemSerializer\r\n\r\nclass FoundItemDetailsView(generics.RetrieveUpdateDestroyAPIView):\r\n    queryset = FoundItem.objects.all()\r\n    serializer_class = FoundItemSerializer\r\n\r\n\r\nclass FoundPersonView(generics.ListCreateAPIView):\r\n    queryset = FoundPerson.objects.all()\r\n    serializer_class = FoundPersonSerializer\r\n\r\n\r\nclass FoundPersonImageView(generics.ListCreateAPIView):\r\n    queryset = FoundPersonImage.objects.all()\r\n    serializer_class = FoundPersonImageSerializer\r\n\r\n\r\nclass LostObject_cityView(generics.ListAPIView):\r\n    serializer_class = LostObjectSerializer\r\n\r\n    def get_queryset(self):\r\n        obj = self.kwargs['city']\r\n        return LostObject.objects.filter(city=obj)\r\n\r\n\r\nclass MapView(generics.ListAPIView):\r\n    queryset = FoundItem.objects.select_related('id')\r\n    serializer_class = MapSerializer\r\n    \r\n#@api_view()\r\n#def comp_lost_itemView(request,pk):\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/find_losts/views.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/find_losts/views.py	(date 1621860000816)
+@@ -12,6 +12,7 @@
+ from rest_framework import status
+ from rest_framework import viewsets
+ from rest_framework import permissions
++from rest_framework.parsers import MultiPartParser, FormParser
+ 
+ # Create your views here.
+ class LostObjectView(generics.ListCreateAPIView):
+@@ -24,9 +25,20 @@
+     serializer_class = LostObjectSerializer
+ 
+ 
+-class LostItemView(generics.ListCreateAPIView):
++class LostItemView(generics.GenericAPIView):
+     queryset = LostItem.objects.all()
+     serializer_class = LostItemSerializer
++    parser_classes = (MultiPartParser, FormParser)
++
++    def create(self, request):
++        print(request.data)
++        serializer = self.get_serializer(data=request.data)
++        if serializer.is_valid():
++            serializer.save()
++            return Response(serializer.data, status=status.HTTP_201_CREATED)
++
++        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
++
+ 
+ class LostItemDetailsView(generics.RetrieveUpdateDestroyAPIView):
+     queryset = LostItem.objects.all()
+@@ -34,15 +46,10 @@
+ 
+ 
+ class LostPersonView(generics.ListCreateAPIView):
++    http_method_names = ['post']
+     queryset = LostPerson.objects.all()
+     serializer_class = LostPersonSerializer
+-    def post(self, request):
+-        serializer = self.serializer_class(data=request.data)
+-        if serializer.is_valid():
+-            serializer.save()
+-            return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
+ 
+-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+ 
+ class LostPersonDetailsView(generics.RetrieveUpdateDestroyAPIView):
+     queryset = LostPerson.objects.all()
+@@ -77,6 +84,7 @@
+ 
+ 
+ class FoundPersonView(generics.ListCreateAPIView):
++    http_method_names = ['post']
+     queryset = FoundPerson.objects.all()
+     serializer_class = FoundPersonSerializer
+ 
+@@ -86,17 +94,6 @@
+     serializer_class = FoundPersonImageSerializer
+ 
+ 
+-class LostObject_cityView(generics.ListAPIView):
+-    serializer_class = LostObjectSerializer
+-
+-    def get_queryset(self):
+-        obj = self.kwargs['city']
+-        return LostObject.objects.filter(city=obj)
+-
+-
+ class MapView(generics.ListAPIView):
+     queryset = FoundItem.objects.select_related('id')
+     serializer_class = MapSerializer
+-    
+-#@api_view()
+-#def comp_lost_itemView(request,pk):
+Index: backend/user_account/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from rest_framework import generics\r\nfrom rest_framework import status\r\nfrom rest_framework.generics import GenericAPIView\r\nfrom rest_framework.permissions import IsAuthenticated\r\nfrom rest_framework.response import Response\r\nfrom rest_framework.views import APIView\r\nfrom .serializers import SignupSerializer, LogoutSerializer, WhoFoundItemSerializer\r\nfrom .models import User\r\nfrom find_losts.models import LostObject, FoundObject\r\n\r\n# Create your views here.\r\n\r\n\r\nclass SignupView(generics.CreateAPIView):\r\n    serializer_class = SignupSerializer\r\n\r\n\r\nclass LoginView(APIView):\r\n    permission_classes = [IsAuthenticated]\r\n\r\n    def post(self, request):\r\n        user = request.user\r\n        user_pic = \"\"\r\n        losts = list(LostObject.objects.filter(user_id=user.pk).values('id'))\r\n        founds = list(FoundObject.objects.filter(user_id=user.pk).values('id'))\r\n        if user.profile_pic is not None:\r\n            user_pic = user.profile_pic.url\r\n        response = {\r\n            'id': user.pk,\r\n            'username': user.first_name,\r\n            'email': user.username,\r\n            'phone': user.phone,\r\n            'city': user.city,\r\n            'birthdate': user.birthdate,\r\n            'profile_pic': user_pic,\r\n            'losts': losts,\r\n            'founds': founds\r\n        }\r\n        return Response({'user': response}, status=status.HTTP_200_OK)\r\n\r\n\r\nclass LogoutView(GenericAPIView):\r\n    serializer_class = LogoutSerializer\r\n    permission_classes = {IsAuthenticated, }\r\n\r\n    def post(self, request):\r\n        serializer = self.serializer_class(data=request.data)\r\n        if serializer.is_valid():\r\n            serializer.save()\r\n            return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)\r\n\r\n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\r\n\r\n\r\nclass WhoFoundItemView(generics.RetrieveAPIView):\r\n    queryset = User.objects.all()\r\n    serializer_class = WhoFoundItemSerializer\r\n    lookup_field = 'id'\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/user_account/views.py	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/user_account/views.py	(date 1621784088894)
+@@ -12,6 +12,7 @@
+ 
+ 
+ class SignupView(generics.CreateAPIView):
++    queryset = User.objects.all()
+     serializer_class = SignupSerializer
+ 
+ 
+@@ -23,7 +24,7 @@
+         user_pic = ""
+         losts = list(LostObject.objects.filter(user_id=user.pk).values('id'))
+         founds = list(FoundObject.objects.filter(user_id=user.pk).values('id'))
+-        if user.profile_pic is not None:
++        if user.profile_pic:
+             user_pic = user.profile_pic.url
+         response = {
+             'id': user.pk,
+Index: backend/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.9 (backend)\" project-jdk-type=\"Python SDK\" />\r\n  <component name=\"PyCharmProfessionalAdvertiser\">\r\n    <option name=\"shown\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- backend/.idea/misc.xml	(revision bfce80dfbed98c3cdb08a2bc51083229e26cebc2)
++++ backend/.idea/misc.xml	(date 1621778344681)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (backend)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (backend)" project-jdk-type="Python SDK" />
+   <component name="PyCharmProfessionalAdvertiser">
+     <option name="shown" value="true" />
+   </component>

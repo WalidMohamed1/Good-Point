@@ -5,36 +5,64 @@
     android:layout_height="wrap_content"
     android:layout_margin="1dp">
     <androidx.cardview.widget.CardView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
         android:layout_centerInParent="true"
         app:cardCornerRadius="4dp"
         app:cardElevation="1dp"
         app:cardMaxElevation="2dp">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/image_view"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_centerHorizontal="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_background" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
             <TextView
                 android:id="@+id/tv_sub_item_title"
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_below="@+id/image_view"
-                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:autoSizeMaxTextSize="15sp"
-                android:autoSizeMinTextSize="8sp"
-                android:autoSizeTextType="uniform"
-                android:gravity="center"
-                android:text="Canada"
+                android:text="Laptop"
+                android:fontFamily="@font/muli_black"
+                android:textSize="@dimen/_20sdp"
                 android:textColor="#000" />
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_sub_item_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/Description"
+                android:fontFamily="@font/muli_extralight"
+                android:textStyle="bold"
+                android:textSize="@dimen/_15sdp"
+                android:textColor="#000" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/_100sdp"
+            >
+            <TextView
+                android:id="@+id/tv_sub_item_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="@dimen/_20sdp"
+                android:text="percent"
+                android:layout_gravity="center"
+                android:fontFamily="@font/muli_black"
+                android:textSize="@dimen/_15sdp"
+                android:textColor="#000" />
+            <RadioButton
+                android:id="@+id/radioButtonn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+
+                />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

@@ -1,9 +1,5 @@
 package com.helloworld.goodpoint.ui;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-
 import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -14,12 +10,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.helloworld.goodpoint.R;
 
@@ -30,6 +29,8 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     LinearLayout subLayout,nameLayout,brandLayout,colorLayout,addrLayout,matchLayout;
     ImageView img;
     Button call,sendMail;
+    private int id;
+    private int type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +38,35 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_details);
         marginOrientation();
         init();
-        updateTable();
+       // updateTable();
         sendMail.setOnClickListener(this);
+        subLayout.setVisibility(View.GONE);
+        colorLayout.setVisibility(View.GONE);
+        brandLayout.setVisibility(View.GONE);
+
         call.setOnClickListener(this);
     }
 
     private void updateTable() {
+        switch (type){
+            case 1:
+                subLayout.setVisibility(View.GONE);
+                brandLayout.setVisibility(View.GONE);
+                colorLayout.setVisibility(View.GONE);
+                
+                break;
+            case 2:
 
+                break;
+            case 3:
+
+                break;
+            case 4:
+
+                break;
+            default:
+
+        }
     }
 
     private void init() {
@@ -69,6 +92,9 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         img = findViewById(R.id.img_detail);
         call = findViewById(R.id.call_btn);
         sendMail = findViewById(R.id.mail_btn);
+
+       // id = getIntent().getIntExtra("id",0);
+       // type = getIntent().getIntExtra("type",0);
     }
 
     private void marginOrientation() {

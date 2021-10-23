@@ -14,8 +14,10 @@ public class prepareList {
     public List<String> prepareList(Context con) {
         List<String> list = new ArrayList<>();
         list.add(con.getString(R.string.Cairo));
+        list.add(con.getString(R.string.SharmElSheikh));
         list.add(con.getString(R.string.Alexandria));
         list.add(con.getString(R.string.ShubraElKheima));
+        list.add(con.getString(R.string.ElBeheira));
         list.add(con.getString(R.string.Giza));
         list.add(con.getString(R.string.PortSaid));
         list.add(con.getString(R.string.Suez));

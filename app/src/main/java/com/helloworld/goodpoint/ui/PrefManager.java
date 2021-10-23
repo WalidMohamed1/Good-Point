@@ -20,6 +20,8 @@ public class PrefManager {
 
     private static final String IS_LOGINNED = "Token";
 
+    private static final String LINK = "ngrok";
+
     public PrefManager(Context context) {
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
@@ -49,4 +51,19 @@ public class PrefManager {
         return pref.getString(IS_LOGINNED,"");
     }
 
+    public void setNGROKLink(String link){
+        editor.putString(LINK, link);
+        editor.commit();
+    }
+
+    public String getNGROKLink() {
+        return pref.getString(LINK,"http://127.0.0.1:8000/");
+    }
+
 }
+
+
+
+
+
+

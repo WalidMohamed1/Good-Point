@@ -37,7 +37,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textSize="@dimen/_15ssp"
-                    android:text="@string/Item"
+                    android:text="Person"
                     android:gravity="end"/>
             </LinearLayout>
 
@@ -79,7 +79,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textSize="@dimen/_15ssp"
-                    android:text="Mohamed"
+                    android:text="Ahmed"
                     android:gravity="end"/>
             </LinearLayout>
 
@@ -142,64 +142,81 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textSize="@dimen/_15ssp"
-                    android:text="Address,address,..."
+                    android:text="Sharm El Sheikh,..."
                     android:gravity="end"/>
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/_15sdp" android:background="@drawable/details_background">
-                <LinearLayout android:id="@+id/lost_date"
-                    android:orientation="horizontal" android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:weightSum="2">
+                android:background="@drawable/details_background"
+                android:orientation="vertical"
+                android:padding="@dimen/_15sdp">
+
+                <LinearLayout
+                    android:id="@+id/lost_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:textSize="@dimen/_15ssp"
+                        android:text="Lost Date"
                         android:textColor="@color/black"
-                        android:text="Lost Date"/>
+                        android:textSize="@dimen/_15ssp" />
+
                     <TextView
                         android:id="@+id/date_of_lost"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:textSize="@dimen/_15ssp"
-                        android:text="2021-1-27"
-                        android:gravity="end"/>
+                        android:gravity="end"
+                        android:text="2021-10-5"
+                        android:textSize="@dimen/_15ssp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/lost_found_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="@dimen/_5sdp">
+                    android:layout_margin="@dimen/_5sdp"
+                    android:orientation="vertical">
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_1sdp"
-                        android:background="#6FFF5722"/>
+                        android:background="#6FFF5722" />
                 </LinearLayout>
-                <LinearLayout android:id="@+id/found_date"
-                    android:orientation="horizontal" android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:weightSum="2">
+
+                <LinearLayout
+                    android:id="@+id/found_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:textSize="@dimen/_15ssp"
+                        android:text="Found Date"
                         android:textColor="@color/black"
-                        android:text="Found Date"/>
+                        android:textSize="@dimen/_15ssp" />
+
                     <TextView
                         android:id="@+id/date_of_found"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:textSize="@dimen/_15ssp"
-                        android:text="2021-1-27"
-                        android:gravity="end"/>
+                        android:gravity="end"
+                        android:text="2021-10-5"
+                        android:textSize="@dimen/_15ssp" />
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout android:id="@+id/matched_detail"
                 android:orientation="vertical" android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:weightSum="2"
@@ -217,12 +234,12 @@
 
                     <TextView
                         android:id="@+id/name_of_matching"
-                        android:layout_width="0dp"
+                        android:layout_width="180dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:textSize="@dimen/_15ssp"
-                        android:text="Ahmed"
-                        android:gravity="end"/>
+                        android:gravity="end"
+                        android:text="Walid"
+                        android:textSize="@dimen/_15ssp" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -250,7 +267,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:textSize="@dimen/_15ssp"
-                        android:text="ahmed22@gmail.com"
+                        android:text="walid@gmail.com"
                         android:gravity="end"/>
                 </LinearLayout>
                 <LinearLayout
@@ -279,7 +296,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:textSize="@dimen/_15ssp"
-                        android:text="01234567890"
+                        android:text="01271177281"
                         android:gravity="end"/>
                 </LinearLayout>
             </LinearLayout>

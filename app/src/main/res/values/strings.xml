@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ObjectMissing">Object Missing</string>
-
+    <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
     <string name="nav_drawer_open">Open navigation drawer</string>
     <string name="nav_drawer_close">Close navigation drawer</string>
     <string name="ItemMissing">Item Missing</string>
@@ -12,21 +12,20 @@
     <string name="TypeOfTheObject">Type of the object</string>
     <string name="Person">Person</string>
     <string name="Item">Item</string>
-    <string name="AddImageOfPerson">Add image of person</string>
+    <string name="AddImageOfPerson">Add images of person</string>
     <string name="AddItemDetails">Add item details</string>
     <string name="AddPersonDetails">Add Person details</string>
     <string name="SerialID">Serial ID(optional)</string>
     <string name="Match">Match</string>
     <string name="Description">Description</string>
     <string name="ColorOfObject">Color</string>
-    <string name="ColorOfObject2">Color<font color='#FF0000'> *</font></string>
     <string name="ObjStat">Object status</string>
     <string name="signup_success">Sign up was successful.</string>
     <string name="type">Type :<font color='#FF0000'> *</font></string>
     <string name="status">status</string>
 
     <string name="hasfound">Has found</string>
-    <string name="objDetails"><a href="" >Object Details</a></string>
+    <string name="objDetails"><a href="">Object Details</a></string>
 
     <string name="goToLogin">Go To Login</string>
     <string name="text_start">You can start using the application now.</string>
@@ -47,6 +46,7 @@
     <string name="Cairo">Cairo</string>
     <string name="Alexandria">Alexandria</string>
     <string name="ShubraElKheima">Shubra El Kheima</string>
+    <string name="ElBeheira">El Beheira</string>
     <string name="Giza">Giza</string>
     <string name="PortSaid">Port Said</string>
     <string name="Suez">Suez</string>
@@ -68,6 +68,7 @@
     <string name="ShibinElKom">Shibin El Kom</string>
     <string name="Banha">Banha</string>
     <string name="Arish">Arish</string>
+    <string name="SharmElSheikh">Sharm El Sheikh</string>
     <string name="Red"> Red</string>
     <string name="Yellow">Yellow</string>
     <string name="Blue">Blue</string>
@@ -85,7 +86,6 @@
     <string name="Gray">Gray</string>
     <string name="Purple">Purple</string>
     <string name="TheBrand">The brand</string>
-    <string name="TheBrand2">The brand<font color='#FF0000'> *</font></string>
     <string name="ObjectFound">Object found</string>
     <string name="dateOfFound">Date of found</string>
     <string name="ObjectLocation">Location</string>
@@ -116,9 +116,10 @@
     <string name="Location">Location</string>
     <string name="Profile">Profile</string>
     <string name="Add_point"><b>Put point</b></string>
+    z
     <string name="Lost">Lost objects</string>
     <string name="Found">Found objects</string>
-    <string name="Hi_message"><b>Hi, User</b></string>
+    <string name="Hi_message"><b></b></string>
     <string name="Daily_message">Good Evening</string>
     <string name="Losses"><b>The Losses</b></string>
     <string name="Founds">The Findings</string>
@@ -159,4 +160,5 @@
     <string name="item_easy">item easy</string>
     <string name="ImageItem">Do you have a picture for this item?</string>
     <string name="PersonName">Person name</string>
+    <string name="Crop">Crop</string>
 </resources>

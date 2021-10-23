@@ -6,15 +6,15 @@ from rest_framework_simplejwt.tokens import RefreshToken
 # Create your models here.
 
 def profile_pic_dir(instance, filename):
-    return 'profile/{0}/'.format(filename)
+    return f"profile/{filename}"
 
 
 def idcard_pic_dir(instance, filename):
-    return 'idcard/{0}/'.format(filename)
+    return f"idcard/{filename}"
 
 
 class User(AbstractUser):
-    email = models.EmailField(max_length=65, unique=True)  # , db_index=True)
+    email = models.EmailField(max_length=1, blank=True)
     phone = models.CharField(max_length=20, unique=True)
     birthdate = models.DateField()
     city = models.CharField(max_length=35)
